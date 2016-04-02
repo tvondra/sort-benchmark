@@ -1,0 +1,1242 @@
+1459306678 [2016-03-30 04:57:58] truncating tables
+1459306678 [2016-03-30 04:57:58] loading unique tables / sorted
+1459307110 [2016-03-30 05:05:10] analyzing
+1459307267 unique_sorted 8MB 'SELECT * FROM int_test ORDER BY a' 7.58 6.02 6.05 6.07 6.07
+1459307618 unique_sorted 8MB 'SELECT * FROM int_test_padding ORDER BY a' 63.89 96.10 61.11 61.69 62.09
+1459307711 unique_sorted 8MB 'SELECT * FROM int_test ORDER BY a DESC' 6.41 6.45 6.39 6.40 6.45
+1459308023 unique_sorted 8MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 61.05 61.38 62.75 60.61 60.36
+1459308104 unique_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.80 3.76 3.77 3.76 3.76
+1459308136 unique_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.71 5.74 5.72 5.75 5.71
+1459308237 unique_sorted 8MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 18.99 19.09 19.04 19.10 19.01
+1459308303 unique_sorted 8MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 9.35 9.27 9.26 9.33 9.25
+1459308369 unique_sorted 8MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.52 11.52 11.41 11.48 11.41
+1459308625 unique_sorted 8MB 'SELECT * FROM text_test ORDER BY a' 51.21 48.20 48.23 48.17 48.19
+1459309187 unique_sorted 8MB 'SELECT * FROM text_test_padding ORDER BY a' 125.00 99.37 96.51 96.52 96.54
+1459309452 unique_sorted 8MB 'SELECT * FROM text_test ORDER BY a DESC' 33.74 33.59 33.60 33.58 33.66
+1459309883 unique_sorted 8MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 78.42 79.52 80.25 79.68 79.60
+1459310211 unique_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM text_test' 49.57 50.12 49.06 50.16 48.95
+1459310520 unique_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 51.32 52.50 51.34 51.35 52.30
+1459311143 unique_sorted 8MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 114.07 114.57 113.95 114.55 114.03
+1459311519 unique_sorted 8MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 52.31 52.85 52.20 51.98 52.45
+1459311843 unique_sorted 8MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 54.63 54.45 54.66 53.73 53.98
+1459312000 unique_sorted 8MB 'SELECT * FROM numeric_test ORDER BY a' 22.60 20.27 20.04 20.29 20.17
+1459312383 unique_sorted 8MB 'SELECT * FROM numeric_test_padding ORDER BY a' 76.94 73.59 68.94 71.04 72.13
+1459312521 unique_sorted 8MB 'SELECT * FROM numeric_test ORDER BY a DESC' 13.52 13.57 13.55 13.54 13.42
+1459312862 unique_sorted 8MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 66.76 64.09 67.29 64.92 64.34
+1459313019 unique_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 17.93 17.93 17.93 18.01 17.94
+1459313132 unique_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 19.01 19.05 19.01 19.03 19.02
+1459313421 unique_sorted 8MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 53.95 53.95 53.89 53.98 53.90
+1459313579 unique_sorted 8MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 20.72 20.75 20.81 20.84 20.75
+1459313709 unique_sorted 8MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 21.77 21.99 21.65 21.86 21.67
+1459313750 unique_sorted 32MB 'SELECT * FROM int_test ORDER BY a' 3.78 3.81 3.83 3.79 3.77
+1459313912 unique_sorted 32MB 'SELECT * FROM int_test_padding ORDER BY a' 47.31 28.69 27.37 27.85 27.54
+1459313966 unique_sorted 32MB 'SELECT * FROM int_test ORDER BY a DESC' 5.17 5.19 5.18 5.18 5.16
+1459314106 unique_sorted 32MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 26.85 26.79 26.77 27.00 27.00
+1459314149 unique_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.29 3.38 3.38 3.36 3.38
+1459314179 unique_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.35 5.31 5.28 5.33 5.32
+1459314250 unique_sorted 32MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.80 12.95 12.99 13.03 13.02
+1459314299 unique_sorted 32MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.25 7.28 7.18 7.19 7.10
+1459314350 unique_sorted 32MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 8.82 8.94 8.90 8.87 8.87
+1459314496 unique_sorted 32MB 'SELECT * FROM text_test ORDER BY a' 27.30 27.28 27.49 27.41 27.44
+1459314855 unique_sorted 32MB 'SELECT * FROM text_test_padding ORDER BY a' 83.14 73.37 58.21 58.25 58.20
+1459315060 unique_sorted 32MB 'SELECT * FROM text_test ORDER BY a DESC' 29.41 29.34 29.52 29.42 29.46
+1459315344 unique_sorted 32MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 50.72 50.73 51.18 50.73 50.87
+1459315539 unique_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM text_test' 28.43 29.56 28.54 29.61 28.51
+1459315723 unique_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 30.77 30.74 30.77 30.74 30.79
+1459316108 unique_sorted 32MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 70.58 71.29 70.54 71.33 70.50
+1459316336 unique_sorted 32MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 31.46 31.05 31.43 31.01 31.54
+1459316536 unique_sorted 32MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 33.53 33.59 34.00 34.07 34.00
+1459316625 unique_sorted 32MB 'SELECT * FROM numeric_test ORDER BY a' 10.85 10.84 10.89 10.87 10.86
+1459316827 unique_sorted 32MB 'SELECT * FROM numeric_test_padding ORDER BY a' 39.16 38.09 37.67 38.22 38.09
+1459316923 unique_sorted 32MB 'SELECT * FROM numeric_test ORDER BY a DESC' 11.66 11.47 11.69 11.47 11.65
+1459317103 unique_sorted 32MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 33.02 33.96 33.47 33.54 33.56
+1459317191 unique_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 11.07 11.20 11.10 11.19 11.05
+1459317264 unique_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 12.30 12.37 12.27 12.34 12.29
+1459317441 unique_sorted 32MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 32.47 32.56 32.50 32.54 33.95
+1459317542 unique_sorted 32MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 13.44 13.68 13.92 13.67 13.88
+1459317631 unique_sorted 32MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 15.05 14.84 15.07 14.95 15.17
+1459317663 unique_sorted 128MB 'SELECT * FROM int_test ORDER BY a' 3.50 3.45 3.39 3.39 3.45
+1459317790 unique_sorted 128MB 'SELECT * FROM int_test_padding ORDER BY a' 38.47 24.47 20.21 20.47 20.34
+1459317835 unique_sorted 128MB 'SELECT * FROM int_test ORDER BY a DESC' 4.95 4.92 4.92 4.91 4.92
+1459317944 unique_sorted 128MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.56 20.00 21.06 20.72 21.41
+1459317979 unique_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM int_test' 2.98 2.97 2.97 2.94 2.95
+1459318007 unique_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.00 4.99 4.98 5.00 5.03
+1459318077 unique_sorted 128MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.96 13.14 12.95 13.10 13.00
+1459318125 unique_sorted 128MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 6.85 6.83 6.82 6.75 6.78
+1459318175 unique_sorted 128MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 8.66 8.64 8.64 8.66 8.68
+1459318280 unique_sorted 128MB 'SELECT * FROM text_test ORDER BY a' 19.23 19.25 19.27 19.24 19.31
+1459318537 unique_sorted 128MB 'SELECT * FROM text_test_padding ORDER BY a' 61.96 54.47 40.66 40.59 40.52
+1459318682 unique_sorted 128MB 'SELECT * FROM text_test ORDER BY a DESC' 21.00 21.03 20.97 20.99 20.95
+1459318916 unique_sorted 128MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 42.35 42.43 42.41 42.41 42.39
+1459319062 unique_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM text_test' 20.23 20.24 21.38 20.16 21.57
+1459319195 unique_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 23.67 22.41 22.47 22.57 22.45
+1459319500 unique_sorted 128MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 55.61 55.99 57.23 55.71 57.18
+1459319675 unique_sorted 128MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 23.91 23.95 23.78 23.86 23.91
+1459319828 unique_sorted 128MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 25.94 25.98 26.04 25.96 26.23
+1459319891 unique_sorted 128MB 'SELECT * FROM numeric_test ORDER BY a' 7.37 7.22 7.22 7.22 7.20
+1459320035 unique_sorted 128MB 'SELECT * FROM numeric_test_padding ORDER BY a' 31.23 26.22 26.87 26.25 26.83
+1459320100 unique_sorted 128MB 'SELECT * FROM numeric_test ORDER BY a DESC' 7.58 7.63 7.59 7.62 7.63
+1459320241 unique_sorted 128MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 26.93 26.17 26.88 26.50 27.29
+1459320308 unique_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 7.99 7.98 7.97 7.94 8.03
+1459320361 unique_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 9.15 9.14 9.16 9.10 9.13
+1459320500 unique_sorted 128MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 26.00 25.75 25.96 25.76 26.01
+1459320576 unique_sorted 128MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 10.10 10.14 10.10 10.16 10.12
+1459320643 unique_sorted 128MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 11.54 11.08 11.07 11.53 11.14
+1459320672 unique_sorted 512MB 'SELECT * FROM int_test ORDER BY a' 3.77 3.34 3.33 3.33 3.34
+1459320816 unique_sorted 512MB 'SELECT * FROM int_test_padding ORDER BY a' 43.36 34.13 21.20 21.13 20.92
+1459320863 unique_sorted 512MB 'SELECT * FROM int_test ORDER BY a DESC' 5.09 5.09 5.11 5.10 5.11
+1459320976 unique_sorted 512MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 21.57 21.49 21.10 22.10 21.49
+1459321005 unique_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM int_test' 1.79 1.79 1.80 1.79 1.79
+1459321026 unique_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.74 3.83 3.83 3.82 3.81
+1459321103 unique_sorted 512MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 14.90 14.57 14.63 14.57 14.61
+1459321153 unique_sorted 512MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 6.73 7.00 7.04 7.00 7.04
+1459321203 unique_sorted 512MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 9.00 8.97 8.48 8.51 8.52
+1459321277 unique_sorted 512MB 'SELECT * FROM text_test ORDER BY a' 13.01 13.07 13.23 13.06 13.21
+1459321492 unique_sorted 512MB 'SELECT * FROM text_test_padding ORDER BY a' 55.97 43.85 33.34 34.33 34.50
+1459321606 unique_sorted 512MB 'SELECT * FROM text_test ORDER BY a DESC' 15.89 15.85 15.94 15.95 15.95
+1459321797 unique_sorted 512MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 35.78 34.59 34.87 35.01 35.16
+1459321905 unique_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM text_test' 14.03 14.09 15.24 14.09 15.28
+1459322002 unique_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 17.52 16.41 16.38 16.33 16.36
+1459322220 unique_sorted 512MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 40.27 40.27 40.39 40.30 40.44
+1459322356 unique_sorted 512MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 19.31 19.04 19.08 18.97 18.96
+1459322481 unique_sorted 512MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 21.39 21.06 21.51 21.04 20.96
+1459322528 unique_sorted 512MB 'SELECT * FROM numeric_test ORDER BY a' 5.11 5.13 5.11 5.13 5.13
+1459322659 unique_sorted 512MB 'SELECT * FROM numeric_test_padding ORDER BY a' 29.51 23.63 24.92 24.07 23.87
+1459322714 unique_sorted 512MB 'SELECT * FROM numeric_test ORDER BY a DESC' 6.12 6.17 6.13 6.16 6.16
+1459322840 unique_sorted 512MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 23.76 23.63 24.02 24.04 24.24
+1459322885 unique_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 4.13 4.06 4.12 4.07 4.11
+1459322915 unique_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 5.26 5.23 5.25 5.22 5.26
+1459323013 unique_sorted 512MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 18.51 18.44 18.53 18.42 18.52
+1459323076 unique_sorted 512MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 8.94 8.78 8.95 8.86 8.90
+1459323134 unique_sorted 512MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 10.00 9.84 9.96 9.85 9.98
+1459323153 unique_sorted 1GB 'SELECT * FROM int_test ORDER BY a' 1.80 1.78 1.78 1.77 1.78
+1459323298 unique_sorted 1GB 'SELECT * FROM int_test_padding ORDER BY a' 47.21 32.62 21.42 21.15 21.10
+1459323340 unique_sorted 1GB 'SELECT * FROM int_test ORDER BY a DESC' 3.88 3.88 3.80 3.88 3.79
+1459323456 unique_sorted 1GB 'SELECT * FROM int_test_padding ORDER BY a DESC' 22.49 22.53 22.43 22.04 21.99
+1459323487 unique_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM int_test' 1.79 1.80 1.79 1.79 1.79
+1459323508 unique_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.75 3.85 3.81 3.82 3.84
+1459323584 unique_sorted 1GB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 14.43 14.43 14.48 14.40 14.46
+1459323624 unique_sorted 1GB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 5.19 5.23 5.22 5.28 5.26
+1459323666 unique_sorted 1GB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 7.20 7.19 7.21 7.20 7.21
+1459323722 unique_sorted 1GB 'SELECT * FROM text_test ORDER BY a' 9.83 9.82 9.78 9.85 9.79
+1459323916 unique_sorted 1GB 'SELECT * FROM text_test_padding ORDER BY a' 55.02 38.72 29.92 30.08 30.54
+1459324010 unique_sorted 1GB 'SELECT * FROM text_test ORDER BY a DESC' 12.73 12.74 12.74 12.74 12.71
+1459324183 unique_sorted 1GB 'SELECT * FROM text_test_padding ORDER BY a DESC' 31.33 31.48 31.46 34.04 31.73
+1459324270 unique_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM text_test' 10.39 10.47 11.55 10.43 11.62
+1459324346 unique_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 13.86 12.79 12.72 12.73 12.76
+1459324440 unique_sorted 1GB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 16.54 16.32 16.37 16.32 16.35
+1459324537 unique_sorted 1GB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 15.83 16.03 16.10 16.00 16.16
+1459324644 unique_sorted 1GB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 18.17 18.08 18.12 18.17 18.10
+1459324677 unique_sorted 1GB 'SELECT * FROM numeric_test ORDER BY a' 2.99 3.04 3.01 3.01 3.02
+1459324803 unique_sorted 1GB 'SELECT * FROM numeric_test_padding ORDER BY a' 28.28 23.92 23.91 23.93 23.41
+1459324850 unique_sorted 1GB 'SELECT * FROM numeric_test ORDER BY a DESC' 4.53 4.58 4.53 4.57 4.52
+1459324981 unique_sorted 1GB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 23.78 24.50 23.71 26.58 27.84
+1459325028 unique_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 4.06 4.12 4.06 4.12 4.07
+1459325059 unique_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 5.21 5.25 5.22 5.26 5.22
+1459325110 unique_sorted 1GB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 9.17 9.11 9.12 9.13 9.14
+1459325151 unique_sorted 1GB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 6.54 6.60 6.52 6.55 6.56
+1459325196 unique_sorted 1GB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 7.59 7.60 7.61 7.61 7.58
+1459325204 [2016-03-30 10:06:44] truncating tables
+1459325206 [2016-03-30 10:06:46] loading unique tables / random
+1459325580 [2016-03-30 10:13:00] analyzing
+1459325730 unique_random 8MB 'SELECT * FROM int_test ORDER BY a' 10.90 10.04 10.27 10.15 10.20
+1459326056 unique_random 8MB 'SELECT * FROM int_test_padding ORDER BY a' 65.38 62.00 62.24 63.74 62.11
+1459326171 unique_random 8MB 'SELECT * FROM int_test ORDER BY a DESC' 10.08 10.05 10.32 10.08 10.36
+1459326498 unique_random 8MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 63.20 63.19 63.30 63.36 63.64
+1459326596 unique_random 8MB 'SELECT COUNT(DISTINCT a) FROM int_test' 6.82 6.80 6.84 6.80 6.84
+1459326647 unique_random 8MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 8.80 8.81 8.80 8.80 8.84
+1459326792 unique_random 8MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 27.00 26.89 26.90 28.05 26.86
+1459326889 unique_random 8MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 14.23 13.81 13.80 13.93 13.81
+1459326984 unique_random 8MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 16.24 16.30 16.23 16.18 16.21
+1459327364 unique_random 8MB 'SELECT * FROM text_test ORDER BY a' 74.69 72.48 72.65 72.51 72.60
+1459328109 unique_random 8MB 'SELECT * FROM text_test_padding ORDER BY a' 155.09 129.42 129.10 129.04 129.70
+1459328602 unique_random 8MB 'SELECT * FROM text_test ORDER BY a DESC' 72.71 72.64 72.85 72.47 72.69
+1459329318 unique_random 8MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 128.84 128.81 128.98 128.90 128.77
+1459329816 unique_random 8MB 'SELECT COUNT(DISTINCT a) FROM text_test' 73.19 74.30 73.08 74.33 73.19
+1459330270 unique_random 8MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 75.48 76.52 75.44 76.60 75.54
+1459331251 unique_random 8MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 180.08 181.11 181.06 181.12 181.12
+1459331825 unique_random 8MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 78.81 78.23 78.82 78.30 78.77
+1459332296 unique_random 8MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 78.43 78.63 78.91 78.30 78.40
+1459332469 unique_random 8MB 'SELECT * FROM numeric_test ORDER BY a' 19.03 18.69 18.92 18.98 18.99
+1459332826 unique_random 8MB 'SELECT * FROM numeric_test_padding ORDER BY a' 73.92 64.02 67.20 64.18 67.87
+1459332988 unique_random 8MB 'SELECT * FROM numeric_test ORDER BY a DESC' 18.95 18.95 18.58 18.64 18.88
+1459333339 unique_random 8MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 68.13 63.94 63.27 68.51 68.03
+1459333495 unique_random 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 17.54 17.36 17.44 17.52 17.49
+1459333605 unique_random 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 18.72 18.46 18.50 18.53 18.59
+1459333862 unique_random 8MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 47.94 47.61 47.52 47.51 47.36
+1459334058 unique_random 8MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 27.43 27.30 38.90 27.54 27.43
+1459334228 unique_random 8MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 28.50 28.83 28.57 28.54 28.48
+1459334299 unique_random 32MB 'SELECT * FROM int_test ORDER BY a' 8.36 8.40 8.44 8.45 8.46
+1459334473 unique_random 32MB 'SELECT * FROM int_test_padding ORDER BY a' 43.31 31.43 30.03 30.25 30.00
+1459334544 unique_random 32MB 'SELECT * FROM int_test ORDER BY a DESC' 8.34 8.41 8.41 8.40 8.43
+1459334701 unique_random 32MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 29.19 29.63 30.52 29.75 29.56
+1459334764 unique_random 32MB 'SELECT COUNT(DISTINCT a) FROM int_test' 6.40 6.59 6.60 6.63 6.63
+1459334813 unique_random 32MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 8.55 8.48 8.43 8.41 8.43
+1459334931 unique_random 32MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 21.65 21.80 21.76 21.72 21.94
+1459335014 unique_random 32MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 11.81 12.44 12.35 12.45 12.33
+1459335098 unique_random 32MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 14.36 14.33 14.38 14.34 14.37
+1459335341 unique_random 32MB 'SELECT * FROM text_test ORDER BY a' 45.52 45.73 45.71 45.75 45.87
+1459335809 unique_random 32MB 'SELECT * FROM text_test_padding ORDER BY a' 94.47 82.05 81.96 81.85 82.17
+1459336121 unique_random 32MB 'SELECT * FROM text_test ORDER BY a DESC' 45.76 45.84 45.74 45.77 45.81
+1459336577 unique_random 32MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 81.88 82.11 82.03 82.02 81.89
+1459336896 unique_random 32MB 'SELECT COUNT(DISTINCT a) FROM text_test' 47.43 47.41 47.41 47.41 47.45
+1459337192 unique_random 32MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 49.83 49.78 49.71 49.62 49.69
+1459337759 unique_random 32MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 103.39 103.43 103.43 103.43 103.46
+1459338112 unique_random 32MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 49.95 50.11 50.19 49.89 49.92
+1459338423 unique_random 32MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 52.28 52.28 52.00 52.29 52.24
+1459338548 unique_random 32MB 'SELECT * FROM numeric_test ORDER BY a' 14.53 14.53 14.48 14.54 14.48
+1459338743 unique_random 32MB 'SELECT * FROM numeric_test_padding ORDER BY a' 37.30 35.56 35.83 35.73 35.62
+1459338851 unique_random 32MB 'SELECT * FROM numeric_test ORDER BY a DESC' 14.55 14.51 14.37 14.53 14.40
+1459339044 unique_random 32MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 35.29 35.67 35.70 35.74 35.79
+1459339162 unique_random 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 16.53 16.40 16.55 16.56 16.43
+1459339267 unique_random 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 17.59 17.62 17.65 17.77 17.80
+1459339467 unique_random 32MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 36.07 36.17 36.16 36.26 37.99
+1459339612 unique_random 32MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 21.79 21.62 21.50 21.67 21.74
+1459339747 unique_random 32MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 22.75 22.64 22.85 22.72 22.65
+1459339804 unique_random 128MB 'SELECT * FROM int_test ORDER BY a' 6.91 6.90 6.90 6.85 6.86
+1459339938 unique_random 128MB 'SELECT * FROM int_test_padding ORDER BY a' 33.48 24.91 22.71 22.80 22.80
+1459339995 unique_random 128MB 'SELECT * FROM int_test ORDER BY a DESC' 6.87 6.86 6.88 6.86 6.87
+1459340115 unique_random 128MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 22.32 22.83 22.74 22.48 22.63
+1459340164 unique_random 128MB 'SELECT COUNT(DISTINCT a) FROM int_test' 5.33 5.32 5.33 5.32 5.34
+1459340207 unique_random 128MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 7.84 7.30 7.30 7.34 7.34
+1459340319 unique_random 128MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 20.85 21.08 21.10 21.08 21.03
+1459340396 unique_random 128MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 10.97 11.29 10.99 11.27 10.89
+1459340473 unique_random 128MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 13.28 13.38 13.21 12.91 12.98
+1459340663 unique_random 128MB 'SELECT * FROM text_test ORDER BY a' 35.56 35.58 35.51 35.59 35.37
+1459341001 unique_random 128MB 'SELECT * FROM text_test_padding ORDER BY a' 66.11 59.12 58.97 59.09 59.09
+1459341238 unique_random 128MB 'SELECT * FROM text_test ORDER BY a DESC' 35.58 35.55 35.57 35.54 35.55
+1459341569 unique_random 128MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 58.90 58.99 59.06 59.00 59.00
+1459341815 unique_random 128MB 'SELECT COUNT(DISTINCT a) FROM text_test' 38.14 37.33 37.33 37.33 37.25
+1459342051 unique_random 128MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 39.54 39.60 39.58 39.60 39.62
+1459342515 unique_random 128MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 84.90 84.90 84.83 84.94 84.90
+1459342799 unique_random 128MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 39.91 39.73 39.88 39.92 39.57
+1459343048 unique_random 128MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 41.78 41.88 41.94 41.96 41.93
+1459343148 unique_random 128MB 'SELECT * FROM numeric_test ORDER BY a' 11.54 11.55 11.48 11.53 11.54
+1459343309 unique_random 128MB 'SELECT * FROM numeric_test_padding ORDER BY a' 33.66 28.98 29.00 29.00 29.02
+1459343397 unique_random 128MB 'SELECT * FROM numeric_test ORDER BY a DESC' 11.49 11.52 11.57 11.56 12.17
+1459343553 unique_random 128MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 28.71 28.96 29.12 28.89 28.96
+1459343645 unique_random 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 12.64 12.68 12.70 12.68 12.74
+1459343728 unique_random 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 13.95 13.98 13.96 13.91 13.92
+1459343899 unique_random 128MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 31.37 31.35 31.39 31.36 31.34
+1459344030 unique_random 128MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 20.09 20.08 19.66 20.07 19.99
+1459344155 unique_random 128MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 20.93 20.90 20.96 20.99 20.90
+1459344209 unique_random 512MB 'SELECT * FROM int_test ORDER BY a' 7.07 6.52 6.52 6.54 6.52
+1459344362 unique_random 512MB 'SELECT * FROM int_test_padding ORDER BY a' 38.42 36.60 23.64 23.20 23.75
+1459344418 unique_random 512MB 'SELECT * FROM int_test ORDER BY a DESC' 6.50 6.49 6.52 6.51 6.51
+1459344540 unique_random 512MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 22.84 22.87 23.24 23.10 23.96
+1459344585 unique_random 512MB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.19 4.20 4.20 4.20 4.20
+1459344620 unique_random 512MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 6.17 6.16 6.18 6.16 6.17
+1459344713 unique_random 512MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 17.60 17.32 17.30 17.28 17.30
+1459344787 unique_random 512MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 11.27 11.22 11.20 11.61 11.21
+1459344864 unique_random 512MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 13.15 13.12 13.10 13.19 13.12
+1459344976 unique_random 512MB 'SELECT * FROM text_test ORDER BY a' 19.96 19.83 19.82 19.75 19.79
+1459345267 unique_random 512MB 'SELECT * FROM text_test_padding ORDER BY a' 62.94 57.36 49.25 51.82 49.33
+1459345415 unique_random 512MB 'SELECT * FROM text_test ORDER BY a DESC' 19.77 19.76 19.79 19.77 19.78
+1459345681 unique_random 512MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 49.37 49.22 49.37 49.28 49.26
+1459345843 unique_random 512MB 'SELECT COUNT(DISTINCT a) FROM text_test' 22.65 22.48 22.41 22.42 22.41
+1459345989 unique_random 512MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 24.75 24.76 24.81 24.85 24.81
+1459346285 unique_random 512MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 54.13 54.16 54.12 54.17 54.11
+1459346460 unique_random 512MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 24.18 24.04 24.11 24.08 24.11
+1459346614 unique_random 512MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 26.13 26.13 26.11 26.12 26.14
+1459346689 unique_random 512MB 'SELECT * FROM numeric_test ORDER BY a' 9.65 9.60 9.59 10.28 9.60
+1459346840 unique_random 512MB 'SELECT * FROM numeric_test_padding ORDER BY a' 31.10 27.47 27.32 27.28 27.36
+1459346915 unique_random 512MB 'SELECT * FROM numeric_test ORDER BY a DESC' 9.56 9.57 9.58 9.58 9.61
+1459347062 unique_random 512MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 27.44 27.36 27.30 27.55 27.73
+1459347132 unique_random 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 8.48 8.49 8.49 8.49 8.49
+1459347189 unique_random 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 9.76 9.75 9.73 9.69 9.72
+1459347331 unique_random 512MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 26.47 26.49 26.54 26.53 26.49
+1459347453 unique_random 512MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 19.55 19.00 18.94 18.98 19.01
+1459347574 unique_random 512MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 20.13 20.65 20.10 20.63 20.08
+1459347620 unique_random 1GB 'SELECT * FROM int_test ORDER BY a' 5.21 5.21 5.22 5.21 5.21
+1459347783 unique_random 1GB 'SELECT * FROM int_test_padding ORDER BY a' 47.21 38.93 23.64 23.57 23.67
+1459347832 unique_random 1GB 'SELECT * FROM int_test ORDER BY a DESC' 5.34 5.20 5.21 5.20 5.20
+1459347956 unique_random 1GB 'SELECT * FROM int_test_padding ORDER BY a DESC' 23.24 23.40 22.96 23.67 24.77
+1459348001 unique_random 1GB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.19 4.19 4.17 4.20 4.20
+1459348036 unique_random 1GB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 6.16 6.20 6.18 6.16 6.19
+1459348129 unique_random 1GB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 17.28 17.30 17.30 17.29 17.28
+1459348195 unique_random 1GB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 9.72 9.72 9.72 9.69 9.69
+1459348263 unique_random 1GB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.65 11.69 11.76 11.71 11.72
+1459348346 unique_random 1GB 'SELECT * FROM text_test ORDER BY a' 14.28 14.26 14.20 14.23 14.24
+1459348604 unique_random 1GB 'SELECT * FROM text_test_padding ORDER BY a' 66.86 51.19 41.65 41.48 42.05
+1459348717 unique_random 1GB 'SELECT * FROM text_test ORDER BY a DESC' 14.18 14.24 14.26 14.24 14.24
+1459348942 unique_random 1GB 'SELECT * FROM text_test_padding ORDER BY a DESC' 41.67 41.58 41.61 41.57 44.99
+1459349070 unique_random 1GB 'SELECT COUNT(DISTINCT a) FROM text_test' 16.29 16.29 16.29 16.34 16.37
+1459349179 unique_random 1GB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 18.57 18.54 18.57 18.54 18.57
+1459349279 unique_random 1GB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 16.42 16.30 16.25 16.23 16.22
+1459349396 unique_random 1GB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 20.06 20.01 20.05 20.04 20.07
+1459349527 unique_random 1GB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 22.08 22.13 22.13 22.25 22.07
+1459349587 unique_random 1GB 'SELECT * FROM numeric_test ORDER BY a' 7.57 7.54 7.53 7.53 7.54
+1459349727 unique_random 1GB 'SELECT * FROM numeric_test_padding ORDER BY a' 31.61 25.36 25.13 25.35 25.33
+1459349790 unique_random 1GB 'SELECT * FROM numeric_test ORDER BY a DESC' 7.53 7.52 7.53 7.56 7.51
+1459349924 unique_random 1GB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 25.19 25.33 25.17 25.17 25.28
+1459349991 unique_random 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 8.51 8.50 8.49 8.54 8.50
+1459350049 unique_random 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 9.71 9.72 9.71 9.72 9.74
+1459350136 unique_random 1GB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 15.57 15.51 15.56 15.58 15.52
+1459350238 unique_random 1GB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 17.18 17.22 17.16 17.25 17.17
+1459350347 unique_random 1GB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 18.39 18.33 18.35 18.28 18.31
+1459350365 [2016-03-30 17:06:05] truncating tables
+1459350367 [2016-03-30 17:06:07] loading unique tables / almost sorted
+1459350906 [2016-03-30 17:15:06] analyzing
+1459351055 unique_almost_asc 8MB 'SELECT * FROM int_test ORDER BY a' 8.44 7.58 7.59 7.58 7.58
+1459351412 unique_almost_asc 8MB 'SELECT * FROM int_test_padding ORDER BY a' 62.64 94.11 67.96 60.91 63.64
+1459351507 unique_almost_asc 8MB 'SELECT * FROM int_test ORDER BY a DESC' 6.66 6.60 6.60 6.60 6.60
+1459351819 unique_almost_asc 8MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 60.85 61.13 61.92 61.00 61.16
+1459351906 unique_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM int_test' 5.14 5.12 5.16 5.12 5.16
+1459351947 unique_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 7.09 7.08 7.16 7.10 7.08
+1459352065 unique_almost_asc 8MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 22.15 22.07 22.18 22.10 22.14
+1459352144 unique_almost_asc 8MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 11.66 11.40 11.61 11.32 11.59
+1459352222 unique_almost_asc 8MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 13.24 13.18 13.22 13.16 13.16
+1459352490 unique_almost_asc 8MB 'SELECT * FROM text_test ORDER BY a' 53.56 50.29 50.22 50.36 50.28
+1459353064 unique_almost_asc 8MB 'SELECT * FROM text_test_padding ORDER BY a' 127.42 100.37 98.62 98.63 98.48
+1459353331 unique_almost_asc 8MB 'SELECT * FROM text_test ORDER BY a DESC' 33.72 33.57 33.79 33.57 33.72
+1459353762 unique_almost_asc 8MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 79.78 79.24 79.44 80.26 78.95
+1459354102 unique_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM text_test' 52.28 51.23 52.30 51.27 52.24
+1459354423 unique_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 54.64 53.55 54.52 53.47 54.56
+1459355070 unique_almost_asc 8MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 118.45 118.98 118.52 118.84 118.42
+1459355462 unique_almost_asc 8MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 54.39 55.09 53.95 54.83 54.74
+1459355798 unique_almost_asc 8MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 56.17 55.97 56.79 56.04 56.24
+1459355964 unique_almost_asc 8MB 'SELECT * FROM numeric_test ORDER BY a' 23.58 21.55 21.26 21.51 21.24
+1459356345 unique_almost_asc 8MB 'SELECT * FROM numeric_test_padding ORDER BY a' 75.71 72.21 71.60 68.20 71.82
+1459356484 unique_almost_asc 8MB 'SELECT * FROM numeric_test ORDER BY a DESC' 13.46 13.59 13.48 13.59 13.55
+1459356829 unique_almost_asc 8MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 65.59 67.86 65.87 65.66 66.79
+1459356994 unique_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 19.43 19.09 19.43 19.09 19.36
+1459357115 unique_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 20.50 20.25 20.59 20.22 20.59
+1459357415 unique_almost_asc 8MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 55.67 56.33 55.74 56.26 55.74
+1459357593 unique_almost_asc 8MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 24.26 24.30 24.11 24.41 24.19
+1459357744 unique_almost_asc 8MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 25.19 25.33 25.27 25.49 25.30
+1459357796 unique_almost_asc 32MB 'SELECT * FROM int_test ORDER BY a' 5.46 5.51 5.47 5.51 5.45
+1459357955 unique_almost_asc 32MB 'SELECT * FROM int_test_padding ORDER BY a' 41.27 29.18 27.63 27.64 27.57
+1459358010 unique_almost_asc 32MB 'SELECT * FROM int_test ORDER BY a DESC' 5.45 5.45 5.45 5.45 5.44
+1459358151 unique_almost_asc 32MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 26.56 27.12 26.80 26.96 27.68
+1459358202 unique_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.79 4.89 4.80 4.88 4.80
+1459358241 unique_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 6.81 6.84 6.79 6.81 6.81
+1459358329 unique_almost_asc 32MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 16.21 16.24 16.09 16.25 16.06
+1459358393 unique_almost_asc 32MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 9.58 9.60 9.56 9.56 9.58
+1459358461 unique_almost_asc 32MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.83 11.51 11.86 11.46 11.83
+1459358622 unique_almost_asc 32MB 'SELECT * FROM text_test ORDER BY a' 29.66 29.77 29.71 29.84 29.71
+1459358986 unique_almost_asc 32MB 'SELECT * FROM text_test_padding ORDER BY a' 82.80 70.01 60.45 60.45 60.57
+1459359194 unique_almost_asc 32MB 'SELECT * FROM text_test ORDER BY a DESC' 29.56 29.56 29.40 29.55 29.43
+1459359476 unique_almost_asc 32MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 50.48 50.41 50.24 50.38 50.34
+1459359683 unique_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM text_test' 31.22 30.81 31.91 30.78 31.92
+1459359880 unique_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 34.13 33.11 33.05 33.12 33.07
+1459360291 unique_almost_asc 32MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 75.31 75.35 75.88 75.25 75.81
+1459360535 unique_almost_asc 32MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 33.51 33.42 34.41 33.79 33.91
+1459360751 unique_almost_asc 32MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 36.04 36.42 35.98 36.52 35.98
+1459360850 unique_almost_asc 32MB 'SELECT * FROM numeric_test ORDER BY a' 12.62 12.50 12.17 12.50 12.29
+1459361056 unique_almost_asc 32MB 'SELECT * FROM numeric_test_padding ORDER BY a' 40.69 38.05 38.53 38.22 38.53
+1459361152 unique_almost_asc 32MB 'SELECT * FROM numeric_test ORDER BY a DESC' 11.47 11.51 11.50 11.54 11.52
+1459361331 unique_almost_asc 32MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 33.16 33.48 33.66 33.14 33.55
+1459361427 unique_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 12.56 12.51 12.94 12.54 12.66
+1459361509 unique_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 13.82 13.74 13.79 13.73 13.83
+1459361699 unique_almost_asc 32MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 35.30 35.14 35.44 35.12 35.55
+1459361823 unique_almost_asc 32MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 17.69 17.79 17.63 17.85 17.57
+1459361935 unique_almost_asc 32MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 18.71 18.91 18.70 19.00 18.72
+1459361980 unique_almost_asc 128MB 'SELECT * FROM int_test ORDER BY a' 5.30 5.25 5.29 5.25 5.29
+1459362108 unique_almost_asc 128MB 'SELECT * FROM int_test_padding ORDER BY a' 35.10 24.59 20.95 20.83 20.69
+1459362155 unique_almost_asc 128MB 'SELECT * FROM int_test ORDER BY a DESC' 5.18 5.18 5.17 5.19 5.18
+1459362262 unique_almost_asc 128MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.01 20.54 20.43 20.28 20.54
+1459362306 unique_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.63 4.64 4.63 4.63 4.62
+1459362344 unique_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 6.55 6.62 6.64 6.64 6.64
+1459362433 unique_almost_asc 128MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 16.40 16.39 16.55 16.43 16.53
+1459362496 unique_almost_asc 128MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 9.42 9.35 9.43 9.41 9.36
+1459362563 unique_almost_asc 128MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.69 11.24 11.65 11.76 11.26
+1459362684 unique_almost_asc 128MB 'SELECT * FROM text_test ORDER BY a' 21.79 21.80 21.76 21.77 21.75
+1459362958 unique_almost_asc 128MB 'SELECT * FROM text_test_padding ORDER BY a' 67.22 56.74 42.82 42.82 42.74
+1459363106 unique_almost_asc 128MB 'SELECT * FROM text_test ORDER BY a DESC' 21.08 21.13 21.06 21.13 21.02
+1459363337 unique_almost_asc 128MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 41.92 41.96 42.00 42.00 41.98
+1459363496 unique_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM text_test' 22.81 22.80 24.07 22.80 23.96
+1459363645 unique_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 26.27 25.01 25.08 24.93 25.01
+1459363974 unique_almost_asc 128MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 60.31 60.32 61.70 60.29 61.72
+1459364167 unique_almost_asc 128MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 26.44 26.60 26.64 26.54 26.46
+1459364336 unique_almost_asc 128MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 28.55 27.89 28.59 28.62 28.49
+1459364409 unique_almost_asc 128MB 'SELECT * FROM numeric_test ORDER BY a' 8.96 8.81 8.85 8.79 8.87
+1459364566 unique_almost_asc 128MB 'SELECT * FROM numeric_test_padding ORDER BY a' 32.38 26.50 35.44 26.68 27.46
+1459364631 unique_almost_asc 128MB 'SELECT * FROM numeric_test ORDER BY a DESC' 7.65 7.64 7.66 7.63 7.67
+1459364773 unique_almost_asc 128MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 26.85 26.53 27.21 26.34 27.36
+1459364847 unique_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 9.59 9.57 9.66 9.59 9.65
+1459364911 unique_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 10.82 10.79 10.80 10.78 10.84
+1459365067 unique_almost_asc 128MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 28.88 29.48 28.87 29.43 28.83
+1459365166 unique_almost_asc 128MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 13.85 13.93 13.93 13.88 13.92
+1459365255 unique_almost_asc 128MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 14.98 14.99 14.94 15.03 14.96
+1459365297 unique_almost_asc 512MB 'SELECT * FROM int_test ORDER BY a' 5.68 5.36 5.32 5.33 5.32
+1459365444 unique_almost_asc 512MB 'SELECT * FROM int_test_padding ORDER BY a' 44.04 34.27 22.21 21.04 20.45
+1459365492 unique_almost_asc 512MB 'SELECT * FROM int_test ORDER BY a DESC' 5.29 5.29 5.35 5.26 5.30
+1459365603 unique_almost_asc 512MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 21.00 21.27 21.27 21.28 21.56
+1459365642 unique_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.53 3.52 3.59 3.52 3.57
+1459365673 unique_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.51 5.55 5.54 5.54 5.52
+1459365755 unique_almost_asc 512MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 15.47 15.30 15.40 15.36 15.41
+1459365820 unique_almost_asc 512MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 10.01 9.73 9.81 9.81 9.81
+1459365886 unique_almost_asc 512MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.70 11.25 11.28 11.18 11.18
+1459365977 unique_almost_asc 512MB 'SELECT * FROM text_test ORDER BY a' 16.13 15.78 15.93 15.81 15.93
+1459366207 unique_almost_asc 512MB 'SELECT * FROM text_test_padding ORDER BY a' 58.76 48.77 35.42 35.37 35.42
+1459366322 unique_almost_asc 512MB 'SELECT * FROM text_test ORDER BY a DESC' 15.89 15.93 16.02 15.94 15.95
+1459366509 unique_almost_asc 512MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 34.65 34.22 34.19 34.21 34.17
+1459366630 unique_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM text_test' 16.83 16.82 18.02 16.85 18.01
+1459366744 unique_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 20.30 19.13 19.12 19.18 19.17
+1459366988 unique_almost_asc 512MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 44.82 44.89 44.82 44.91 44.86
+1459367142 unique_almost_asc 512MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 21.82 21.80 21.89 22.04 21.96
+1459367284 unique_almost_asc 512MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 24.02 23.83 24.44 23.91 23.87
+1459367343 unique_almost_asc 512MB 'SELECT * FROM numeric_test ORDER BY a' 7.02 6.99 6.96 6.95 6.96
+1459367478 unique_almost_asc 512MB 'SELECT * FROM numeric_test_padding ORDER BY a' 30.64 24.57 24.67 24.05 24.49
+1459367534 unique_almost_asc 512MB 'SELECT * FROM numeric_test ORDER BY a DESC' 6.17 6.20 6.17 6.21 6.20
+1459367659 unique_almost_asc 512MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 23.55 23.74 24.16 24.02 24.00
+1459367713 unique_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 5.91 6.01 5.92 6.07 5.91
+1459367755 unique_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 7.13 7.20 7.09 7.21 7.12
+1459367867 unique_almost_asc 512MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 21.12 21.02 21.12 21.02 21.11
+1459367953 unique_almost_asc 512MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 12.97 12.81 12.93 12.85 12.95
+1459368036 unique_almost_asc 512MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 14.01 13.93 14.02 13.98 14.02
+1459368069 unique_almost_asc 1GB 'SELECT * FROM int_test ORDER BY a' 3.86 3.90 3.86 3.89 3.86
+1459368222 unique_almost_asc 1GB 'SELECT * FROM int_test_padding ORDER BY a' 48.49 32.09 22.46 22.83 22.90
+1459368264 unique_almost_asc 1GB 'SELECT * FROM int_test ORDER BY a DESC' 3.90 3.92 3.89 3.91 3.90
+1459368379 unique_almost_asc 1GB 'SELECT * FROM int_test_padding ORDER BY a DESC' 21.98 21.34 22.50 22.80 22.01
+1459368419 unique_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.52 3.50 3.57 3.52 3.58
+1459368450 unique_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.51 5.53 5.54 5.55 5.54
+1459368530 unique_almost_asc 1GB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 14.86 14.88 14.92 14.89 14.89
+1459368586 unique_almost_asc 1GB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.97 8.05 8.06 8.09 7.98
+1459368644 unique_almost_asc 1GB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 9.91 9.99 10.00 10.00 9.98
+1459368718 unique_almost_asc 1GB 'SELECT * FROM text_test ORDER BY a' 13.05 12.85 12.87 12.79 12.81
+1459368927 unique_almost_asc 1GB 'SELECT * FROM text_test_padding ORDER BY a' 56.93 40.38 32.17 33.07 33.34
+1459369024 unique_almost_asc 1GB 'SELECT * FROM text_test ORDER BY a DESC' 12.91 12.93 12.94 12.95 12.92
+1459369194 unique_almost_asc 1GB 'SELECT * FROM text_test_padding ORDER BY a DESC' 30.92 31.13 32.92 31.67 31.09
+1459369295 unique_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM text_test' 13.35 13.39 14.56 13.41 14.54
+1459369388 unique_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 16.78 15.65 15.67 15.71 15.65
+1459369487 unique_almost_asc 1GB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 16.90 16.68 16.68 16.66 16.70
+1459369597 unique_almost_asc 1GB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 18.80 18.70 18.88 18.68 18.86
+1459369720 unique_almost_asc 1GB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 20.81 20.89 20.78 20.74 20.82
+1459369766 unique_almost_asc 1GB 'SELECT * FROM numeric_test ORDER BY a' 5.08 4.90 4.96 4.91 4.97
+1459369896 unique_almost_asc 1GB 'SELECT * FROM numeric_test_padding ORDER BY a' 28.72 23.90 24.22 24.30 23.71
+1459369943 unique_almost_asc 1GB 'SELECT * FROM numeric_test ORDER BY a DESC' 4.61 4.56 4.60 4.56 4.58
+1459370070 unique_almost_asc 1GB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 23.65 24.19 24.20 24.24 26.25
+1459370124 unique_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 5.91 6.01 5.90 6.06 5.90
+1459370166 unique_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 7.15 7.20 7.09 7.24 7.14
+1459370219 unique_almost_asc 1GB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 9.12 9.15 9.16 9.21 9.16
+1459370282 unique_almost_asc 1GB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 10.69 10.73 10.74 10.75 10.75
+1459370352 unique_almost_asc 1GB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 11.86 11.80 11.80 11.80 11.87
+1459370364 [2016-03-30 22:39:24] truncating tables
+1459370366 [2016-03-30 22:39:26] loading low cardinality tables / sorted
+1459370812 [2016-03-30 22:46:52] analyzing
+1459370962 low_cardinality_sorted 8MB 'SELECT * FROM int_test ORDER BY a' 7.14 6.10 6.08 6.15 6.11
+1459371317 low_cardinality_sorted 8MB 'SELECT * FROM int_test_padding ORDER BY a' 63.20 95.99 64.43 63.94 61.33
+1459371407 low_cardinality_sorted 8MB 'SELECT * FROM int_test ORDER BY a DESC' 5.37 5.33 5.34 5.31 5.37
+1459371721 low_cardinality_sorted 8MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 61.44 61.90 62.38 60.64 62.43
+1459371799 low_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.70 3.69 3.69 3.70 3.70
+1459371831 low_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.62 5.60 5.63 5.61 5.59
+1459371929 low_cardinality_sorted 8MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 18.44 18.35 18.40 18.43 18.31
+1459371994 low_cardinality_sorted 8MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 9.42 9.33 9.27 9.35 9.29
+1459372060 low_cardinality_sorted 8MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.51 11.51 11.52 11.14 11.46
+1459372178 low_cardinality_sorted 8MB 'SELECT * FROM text_test ORDER BY a' 23.22 20.82 20.91 20.72 20.76
+1459372598 low_cardinality_sorted 8MB 'SELECT * FROM text_test_padding ORDER BY a' 95.96 78.51 75.29 73.94 75.38
+1459372775 low_cardinality_sorted 8MB 'SELECT * FROM text_test ORDER BY a DESC' 20.65 20.74 20.61 20.68 20.85
+1459373162 low_cardinality_sorted 8MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 73.16 73.62 75.30 73.59 70.55
+1459373344 low_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM text_test' 21.43 21.43 21.25 21.35 21.22
+1459373512 low_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 29.44 29.66 29.63 29.35 29.39
+1459373841 low_cardinality_sorted 8MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 59.65 60.01 59.74 59.66 59.58
+1459374131 low_cardinality_sorted 8MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 46.42 46.20 45.16 46.42 46.59
+1459374427 low_cardinality_sorted 8MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 49.99 50.03 50.74 49.92 49.89
+1459374593 low_cardinality_sorted 8MB 'SELECT * FROM numeric_test ORDER BY a' 25.51 22.67 22.64 22.70 22.69
+1459374972 low_cardinality_sorted 8MB 'SELECT * FROM numeric_test_padding ORDER BY a' 76.95 67.95 71.12 70.22 69.68
+1459375154 low_cardinality_sorted 8MB 'SELECT * FROM numeric_test ORDER BY a DESC' 22.57 22.58 22.56 22.55 22.55
+1459375524 low_cardinality_sorted 8MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 68.78 67.19 69.54 70.74 70.60
+1459375699 low_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 21.06 21.14 21.15 21.13 21.11
+1459375832 low_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 22.31 22.31 22.40 22.37 22.32
+1459376154 low_cardinality_sorted 8MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 60.01 59.94 59.96 59.96 59.98
+1459376397 low_cardinality_sorted 8MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 37.60 36.60 36.45 36.08 36.39
+1459376622 low_cardinality_sorted 8MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 37.84 37.99 37.59 37.34 37.61
+1459376679 low_cardinality_sorted 32MB 'SELECT * FROM int_test ORDER BY a' 3.81 3.78 3.78 3.83 3.78
+1459376850 low_cardinality_sorted 32MB 'SELECT * FROM int_test_padding ORDER BY a' 53.80 29.33 28.27 27.66 27.57
+1459376897 low_cardinality_sorted 32MB 'SELECT * FROM int_test ORDER BY a DESC' 4.02 4.01 4.00 4.01 4.02
+1459377037 low_cardinality_sorted 32MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 27.01 26.95 26.92 26.80 27.92
+1459377081 low_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.18 3.17 3.21 3.19 3.19
+1459377110 low_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.18 5.18 5.21 5.19 5.21
+1459377179 low_cardinality_sorted 32MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.68 12.65 12.69 12.71 12.72
+1459377228 low_cardinality_sorted 32MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.33 7.32 7.28 7.21 7.14
+1459377279 low_cardinality_sorted 32MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 8.95 8.89 8.95 8.94 8.93
+1459377381 low_cardinality_sorted 32MB 'SELECT * FROM text_test ORDER BY a' 18.56 18.64 18.59 18.62 18.64
+1459377646 low_cardinality_sorted 32MB 'SELECT * FROM text_test_padding ORDER BY a' 61.50 56.14 42.62 42.93 42.52
+1459377782 low_cardinality_sorted 32MB 'SELECT * FROM text_test ORDER BY a DESC' 18.61 18.69 18.70 18.62 18.61
+1459378013 low_cardinality_sorted 32MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 42.55 42.67 42.44 42.81 42.59
+1459378153 low_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM text_test' 19.39 19.44 19.28 19.30 19.48
+1459378325 low_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 30.56 30.43 30.34 30.52 30.48
+1459378625 low_cardinality_sorted 32MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 53.98 53.91 53.94 54.12 53.95
+1459378850 low_cardinality_sorted 32MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 34.16 34.04 33.69 34.86 34.14
+1459379105 low_cardinality_sorted 32MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 44.31 44.37 44.09 44.15 44.20
+1459379230 low_cardinality_sorted 32MB 'SELECT * FROM numeric_test ORDER BY a' 16.26 16.20 16.19 16.20 16.18
+1459379449 low_cardinality_sorted 32MB 'SELECT * FROM numeric_test_padding ORDER BY a' 42.81 39.95 39.83 39.93 39.96
+1459379570 low_cardinality_sorted 32MB 'SELECT * FROM numeric_test ORDER BY a DESC' 16.35 16.33 16.34 16.33 16.26
+1459379785 low_cardinality_sorted 32MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 39.50 39.49 39.90 40.05 39.59
+1459379910 low_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 16.91 16.99 16.96 16.85 16.94
+1459380018 low_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 18.23 18.27 18.22 18.23 18.26
+1459380250 low_cardinality_sorted 32MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 42.84 42.82 42.80 42.73 42.82
+1459380452 low_cardinality_sorted 32MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 32.32 32.30 31.10 31.11 32.23
+1459380652 low_cardinality_sorted 32MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 33.40 33.47 33.48 33.40 33.42
+1459380703 low_cardinality_sorted 128MB 'SELECT * FROM int_test ORDER BY a' 3.54 3.41 3.40 3.42 3.42
+1459380831 low_cardinality_sorted 128MB 'SELECT * FROM int_test_padding ORDER BY a' 34.87 28.50 20.48 20.52 20.67
+1459380871 low_cardinality_sorted 128MB 'SELECT * FROM int_test ORDER BY a DESC' 3.71 3.73 3.74 3.75 3.73
+1459380976 low_cardinality_sorted 128MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.50 19.44 20.45 20.34 20.95
+1459381012 low_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM int_test' 2.84 2.87 2.86 2.87 2.88
+1459381039 low_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 4.89 4.85 4.85 4.87 4.86
+1459381106 low_cardinality_sorted 128MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.52 12.51 12.45 12.47 12.45
+1459381153 low_cardinality_sorted 128MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 6.85 6.84 6.87 6.83 6.76
+1459381203 low_cardinality_sorted 128MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 8.76 8.71 8.70 8.75 8.74
+1459381283 low_cardinality_sorted 128MB 'SELECT * FROM text_test ORDER BY a' 14.16 14.19 14.20 14.21 14.14
+1459381500 low_cardinality_sorted 128MB 'SELECT * FROM text_test_padding ORDER BY a' 46.68 47.16 36.42 36.29 36.43
+1459381608 low_cardinality_sorted 128MB 'SELECT * FROM text_test ORDER BY a DESC' 14.21 14.25 14.20 14.23 14.20
+1459381805 low_cardinality_sorted 128MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 36.40 36.38 37.52 36.30 36.30
+1459381916 low_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM text_test' 15.07 15.04 15.06 14.99 15.03
+1459382065 low_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 26.68 26.64 26.60 26.70 26.63
+1459382331 low_cardinality_sorted 128MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 47.83 47.79 47.91 47.88 47.78
+1459382522 low_cardinality_sorted 128MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 28.40 28.31 28.43 28.28 29.65
+1459382750 low_cardinality_sorted 128MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 39.99 40.66 40.02 39.33 40.03
+1459382854 low_cardinality_sorted 128MB 'SELECT * FROM numeric_test ORDER BY a' 12.93 12.91 13.03 12.97 12.94
+1459383021 low_cardinality_sorted 128MB 'SELECT * FROM numeric_test_padding ORDER BY a' 36.21 29.34 29.31 29.22 29.32
+1459383114 low_cardinality_sorted 128MB 'SELECT * FROM numeric_test ORDER BY a DESC' 12.80 12.81 12.79 12.80 12.83
+1459383275 low_cardinality_sorted 128MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 29.44 29.32 29.45 29.97 29.74
+1459383376 low_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 14.24 14.22 14.25 14.26 14.33
+1459383468 low_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 15.58 15.53 15.55 15.49 15.52
+1459383669 low_cardinality_sorted 128MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 37.20 37.34 37.27 36.72 37.16
+1459383853 low_cardinality_sorted 128MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 29.76 29.54 28.58 29.70 29.41
+1459384035 low_cardinality_sorted 128MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 29.64 30.74 30.36 29.94 30.86
+1459384083 low_cardinality_sorted 512MB 'SELECT * FROM int_test ORDER BY a' 3.93 3.30 3.32 3.36 3.32
+1459384226 low_cardinality_sorted 512MB 'SELECT * FROM int_test_padding ORDER BY a' 43.05 34.93 20.93 20.43 20.97
+1459384267 low_cardinality_sorted 512MB 'SELECT * FROM int_test ORDER BY a DESC' 3.88 3.85 3.85 3.84 3.82
+1459384375 low_cardinality_sorted 512MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.36 20.99 21.39 20.36 21.49
+1459384405 low_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM int_test' 1.69 1.69 1.70 1.68 1.69
+1459384425 low_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.67 3.64 3.67 3.67 3.66
+1459384461 low_cardinality_sorted 512MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 6.37 6.50 6.40 6.49 6.44
+1459384503 low_cardinality_sorted 512MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.40 7.14 7.04 7.16 7.12
+1459384555 low_cardinality_sorted 512MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 8.98 9.06 9.08 9.00 9.08
+1459384603 low_cardinality_sorted 512MB 'SELECT * FROM text_test ORDER BY a' 7.76 7.90 7.65 7.90 7.67
+1459384822 low_cardinality_sorted 512MB 'SELECT * FROM text_test_padding ORDER BY a' 56.58 51.74 34.27 34.28 34.31
+1459384896 low_cardinality_sorted 512MB 'SELECT * FROM text_test ORDER BY a DESC' 7.62 7.95 7.65 7.95 7.67
+1459385075 low_cardinality_sorted 512MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 34.25 34.24 34.35 34.28 34.29
+1459385153 low_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM text_test' 8.59 8.75 8.63 8.73 8.66
+1459385264 low_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 20.39 20.35 20.39 20.41 20.39
+1459385473 low_cardinality_sorted 512MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 37.84 37.70 37.74 37.79 37.74
+1459385637 low_cardinality_sorted 512MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 25.00 25.22 25.33 25.07 25.08
+1459385846 low_cardinality_sorted 512MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 36.97 36.89 36.90 36.94 36.81
+1459385940 low_cardinality_sorted 512MB 'SELECT * FROM numeric_test ORDER BY a' 11.66 11.24 11.33 11.25 11.34
+1459386123 low_cardinality_sorted 512MB 'SELECT * FROM numeric_test_padding ORDER BY a' 39.49 33.52 32.74 33.24 32.79
+1459386213 low_cardinality_sorted 512MB 'SELECT * FROM numeric_test ORDER BY a DESC' 11.29 11.20 11.31 11.24 11.30
+1459386390 low_cardinality_sorted 512MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 32.80 33.48 32.83 34.21 32.83
+1459386487 low_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 12.69 12.73 12.75 12.74 12.72
+1459386570 low_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 13.99 14.04 14.03 14.04 13.99
+1459386733 low_cardinality_sorted 512MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 29.67 29.84 29.51 29.76 29.55
+1459386904 low_cardinality_sorted 512MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 28.48 28.02 28.53 27.99 28.59
+1459387079 low_cardinality_sorted 512MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 29.36 29.06 29.44 29.13 29.42
+1459387117 low_cardinality_sorted 1GB 'SELECT * FROM int_test ORDER BY a' 1.76 1.77 1.77 1.76 1.77
+1459387268 low_cardinality_sorted 1GB 'SELECT * FROM int_test_padding ORDER BY a' 46.88 37.94 21.49 22.67 21.20
+1459387302 low_cardinality_sorted 1GB 'SELECT * FROM int_test ORDER BY a DESC' 2.38 2.39 2.40 2.39 2.38
+1459387413 low_cardinality_sorted 1GB 'SELECT * FROM int_test_padding ORDER BY a DESC' 21.02 21.69 22.70 21.71 21.60
+1459387442 low_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM int_test' 1.68 1.67 1.67 1.70 1.68
+1459387462 low_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.62 3.69 3.65 3.68 3.68
+1459387498 low_cardinality_sorted 1GB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 6.40 6.48 6.40 6.49 6.43
+1459387531 low_cardinality_sorted 1GB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 5.11 5.30 5.33 5.29 5.29
+1459387573 low_cardinality_sorted 1GB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 7.26 7.27 7.26 7.28 7.30
+1459387603 low_cardinality_sorted 1GB 'SELECT * FROM text_test ORDER BY a' 4.71 4.60 4.60 4.60 4.60
+1459387803 low_cardinality_sorted 1GB 'SELECT * FROM text_test_padding ORDER BY a' 54.33 43.11 32.61 32.60 32.53
+1459387859 low_cardinality_sorted 1GB 'SELECT * FROM text_test ORDER BY a DESC' 4.60 4.61 4.64 4.64 4.64
+1459388034 low_cardinality_sorted 1GB 'SELECT * FROM text_test_padding ORDER BY a DESC' 33.16 32.63 32.48 35.20 36.77
+1459388096 low_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM text_test' 5.75 5.78 5.75 5.79 5.76
+1459388192 low_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 18.07 18.14 18.14 18.08 18.06
+1459388255 low_cardinality_sorted 1GB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 9.10 9.00 9.07 8.98 9.07
+1459388380 low_cardinality_sorted 1GB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 23.11 23.13 23.16 23.08 23.25
+1459388579 low_cardinality_sorted 1GB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 34.99 35.08 35.22 35.13 35.13
+1459388663 low_cardinality_sorted 1GB 'SELECT * FROM numeric_test ORDER BY a' 9.69 9.87 9.61 9.86 9.62
+1459388841 low_cardinality_sorted 1GB 'SELECT * FROM numeric_test_padding ORDER BY a' 38.11 32.59 32.82 32.51 32.72
+1459388922 low_cardinality_sorted 1GB 'SELECT * FROM numeric_test ORDER BY a DESC' 9.65 9.91 9.64 9.92 9.65
+1459389096 low_cardinality_sorted 1GB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 32.85 32.86 33.29 31.77 33.30
+1459389185 low_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 11.11 11.55 11.10 11.57 11.08
+1459389260 low_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 12.40 12.84 12.41 12.86 12.41
+1459389319 low_cardinality_sorted 1GB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 9.28 9.17 9.28 9.18 9.23
+1459389459 low_cardinality_sorted 1GB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 26.21 26.22 26.26 26.19 26.21
+1459389622 low_cardinality_sorted 1GB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 27.37 27.39 27.42 27.40 27.40
+1459389650 [2016-03-31 04:00:50] truncating tables
+1459389652 [2016-03-31 04:00:52] loading low cardinality tables / random
+1459389838 [2016-03-31 04:03:58] analyzing
+1459389893 low_cardinality_random 8MB 'SELECT * FROM int_test ORDER BY a' 7.80 7.79 7.42 7.80 7.79
+1459389953 low_cardinality_random 8MB 'SELECT * FROM int_test_padding ORDER BY a' 10.21 10.50 10.55 10.41 10.44
+1459390003 low_cardinality_random 8MB 'SELECT * FROM int_test ORDER BY a DESC' 7.79 7.83 7.64 7.53 7.85
+1459390062 low_cardinality_random 8MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 10.30 10.46 10.11 10.50 10.50
+1459390097 low_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.85 4.82 4.85 4.82 4.86
+1459390126 low_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 4.87 4.87 4.90 4.86 4.89
+1459390226 low_cardinality_random 8MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 18.78 18.55 18.91 18.98 19.50
+1459390317 low_cardinality_random 8MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 14.23 14.12 14.24 14.30 14.21
+1459390403 low_cardinality_random 8MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 14.39 14.43 14.30 14.43 14.31
+1459390659 low_cardinality_random 8MB 'SELECT * FROM text_test ORDER BY a' 48.30 48.40 48.33 48.34 48.27
+1459391003 low_cardinality_random 8MB 'SELECT * FROM text_test_padding ORDER BY a' 59.22 59.19 59.11 59.15 59.23
+1459391302 low_cardinality_random 8MB 'SELECT * FROM text_test ORDER BY a DESC' 47.90 47.82 47.92 47.89 47.90
+1459391644 low_cardinality_random 8MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 58.85 58.79 58.85 58.86 58.85
+1459391950 low_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM text_test' 49.38 49.38 49.43 49.31 49.36
+1459392247 low_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 49.43 49.50 49.53 49.44 49.47
+1459392896 low_cardinality_random 8MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 119.86 119.98 119.91 119.76 119.93
+1459393327 low_cardinality_random 8MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 61.72 62.30 62.31 62.34 62.42
+1459393703 low_cardinality_random 8MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 62.62 62.79 62.76 62.61 62.59
+1459393878 low_cardinality_random 8MB 'SELECT * FROM numeric_test ORDER BY a' 22.68 22.67 22.61 22.64 22.66
+1459394029 low_cardinality_random 8MB 'SELECT * FROM numeric_test_padding ORDER BY a' 25.75 25.76 25.74 25.73 25.68
+1459394168 low_cardinality_random 8MB 'SELECT * FROM numeric_test ORDER BY a DESC' 22.54 22.51 22.49 22.55 22.52
+1459394319 low_cardinality_random 8MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 25.58 25.65 25.58 25.71 25.71
+1459394449 low_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 21.02 21.06 21.07 21.04 21.05
+1459394576 low_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 21.07 21.12 21.23 21.21 21.16
+1459394890 low_cardinality_random 8MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 58.55 58.56 58.52 58.61 58.64
+1459395138 low_cardinality_random 8MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 37.57 37.72 37.63 37.75 37.78
+1459395364 low_cardinality_random 8MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 37.78 37.74 37.80 37.92 37.86
+1459395433 low_cardinality_random 32MB 'SELECT * FROM int_test ORDER BY a' 6.21 6.24 6.21 6.23 6.25
+1459395481 low_cardinality_random 32MB 'SELECT * FROM int_test_padding ORDER BY a' 8.24 8.25 8.25 8.20 8.21
+1459395521 low_cardinality_random 32MB 'SELECT * FROM int_test ORDER BY a DESC' 6.23 6.22 6.19 6.23 6.79
+1459395568 low_cardinality_random 32MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 8.24 8.25 8.20 8.22 8.23
+1459395599 low_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.53 4.53 4.54 4.53 4.54
+1459395627 low_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 4.64 4.62 4.63 4.62 4.61
+1459395705 low_cardinality_random 32MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 14.67 14.74 14.60 14.72 14.67
+1459395785 low_cardinality_random 32MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 13.12 13.13 13.12 12.96 13.17
+1459395862 low_cardinality_random 32MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 13.18 13.12 12.71 12.61 12.49
+1459396041 low_cardinality_random 32MB 'SELECT * FROM text_test ORDER BY a' 33.14 33.21 33.24 33.22 33.16
+1459396241 low_cardinality_random 32MB 'SELECT * FROM text_test_padding ORDER BY a' 33.31 33.25 33.20 33.25 33.23
+1459396440 low_cardinality_random 32MB 'SELECT * FROM text_test ORDER BY a DESC' 33.23 33.26 33.23 33.31 33.25
+1459396639 low_cardinality_random 32MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 33.08 33.10 33.12 33.16 33.08
+1459396846 low_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM text_test' 34.56 34.45 34.59 34.52 35.48
+1459397055 low_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 34.60 35.83 34.62 34.63 34.60
+1459397461 low_cardinality_random 32MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 74.25 74.35 74.29 74.28 74.22
+1459397776 low_cardinality_random 32MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 48.12 48.12 48.17 48.18 48.08
+1459398063 low_cardinality_random 32MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 47.75 46.72 48.22 48.39 48.23
+1459398193 low_cardinality_random 32MB 'SELECT * FROM numeric_test ORDER BY a' 16.16 16.46 16.16 16.16 16.21
+1459398295 low_cardinality_random 32MB 'SELECT * FROM numeric_test_padding ORDER BY a' 17.23 17.21 17.21 17.17 17.24
+1459398394 low_cardinality_random 32MB 'SELECT * FROM numeric_test ORDER BY a DESC' 16.32 16.27 16.30 16.29 16.26
+1459398497 low_cardinality_random 32MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 17.23 17.32 17.28 17.28 17.28
+1459398599 low_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 16.87 16.94 16.95 16.88 16.91
+1459398701 low_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 17.05 17.01 17.04 17.05 17.04
+1459398925 low_cardinality_random 32MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 41.40 41.45 41.41 41.43 41.51
+1459399128 low_cardinality_random 32MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 32.32 32.30 32.33 32.38 32.33
+1459399323 low_cardinality_random 32MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 32.44 32.53 32.49 32.49 32.47
+1459399382 low_cardinality_random 128MB 'SELECT * FROM int_test ORDER BY a' 5.24 5.25 5.24 5.26 5.24
+1459399423 low_cardinality_random 128MB 'SELECT * FROM int_test_padding ORDER BY a' 7.09 7.04 7.07 7.05 7.04
+1459399456 low_cardinality_random 128MB 'SELECT * FROM int_test ORDER BY a DESC' 5.27 5.24 5.23 5.23 5.24
+1459399496 low_cardinality_random 128MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 7.04 7.09 7.07 7.06 7.10
+1459399523 low_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.80 3.80 3.85 3.79 3.80
+1459399546 low_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.86 3.88 3.89 3.88 3.92
+1459399613 low_cardinality_random 128MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.54 12.55 12.59 12.56 12.58
+1459399688 low_cardinality_random 128MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 12.43 12.55 12.44 12.39 12.52
+1459399763 low_cardinality_random 128MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 12.61 12.56 12.63 12.60 12.55
+1459399889 low_cardinality_random 128MB 'SELECT * FROM text_test ORDER BY a' 22.79 22.73 22.75 22.74 22.74
+1459400024 low_cardinality_random 128MB 'SELECT * FROM text_test_padding ORDER BY a' 22.40 22.39 22.34 22.34 22.26
+1459400160 low_cardinality_random 128MB 'SELECT * FROM text_test ORDER BY a DESC' 22.76 22.74 22.81 22.72 22.81
+1459400295 low_cardinality_random 128MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 22.45 22.48 22.43 22.42 22.39
+1459400437 low_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM text_test' 23.88 23.87 23.91 23.90 23.93
+1459400581 low_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 23.93 23.97 24.00 23.96 23.95
+1459400878 low_cardinality_random 128MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 54.74 54.56 54.69 54.61 54.59
+1459401122 low_cardinality_random 128MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 38.05 37.98 36.72 38.06 37.90
+1459401350 low_cardinality_random 128MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 38.18 37.99 38.08 37.92 38.07
+1459401451 low_cardinality_random 128MB 'SELECT * FROM numeric_test ORDER BY a' 12.92 12.95 12.89 12.94 12.91
+1459401548 low_cardinality_random 128MB 'SELECT * FROM numeric_test_padding ORDER BY a' 16.66 16.61 16.63 16.69 16.58
+1459401628 low_cardinality_random 128MB 'SELECT * FROM numeric_test ORDER BY a DESC' 12.82 12.82 12.79 12.79 12.79
+1459401725 low_cardinality_random 128MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 16.71 16.84 16.81 16.85 16.82
+1459401813 low_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 14.23 14.24 14.24 14.27 14.25
+1459401899 low_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 14.34 14.36 14.31 14.34 14.33
+1459402093 low_cardinality_random 128MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 35.96 36.02 36.00 35.78 35.87
+1459402277 low_cardinality_random 128MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 29.46 29.64 29.60 29.56 29.56
+1459402455 low_cardinality_random 128MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 29.76 29.68 29.72 29.73 29.74
+1459402511 low_cardinality_random 512MB 'SELECT * FROM int_test ORDER BY a' 5.07 5.07 5.09 5.11 5.09
+1459402549 low_cardinality_random 512MB 'SELECT * FROM int_test_padding ORDER BY a' 6.67 6.56 6.66 6.52 6.68
+1459402581 low_cardinality_random 512MB 'SELECT * FROM int_test ORDER BY a DESC' 5.09 5.10 5.09 5.06 5.07
+1459402619 low_cardinality_random 512MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 6.65 6.55 6.68 6.53 6.68
+1459402639 low_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM int_test' 2.61 2.60 2.63 2.58 2.64
+1459402655 low_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 2.69 2.72 2.69 2.67 2.70
+1459402682 low_cardinality_random 512MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 4.94 4.87 4.94 4.88 4.95
+1459402753 low_cardinality_random 512MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 13.13 13.17 13.14 13.15 13.26
+1459402832 low_cardinality_random 512MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 13.17 13.10 13.19 13.11 13.18
+1459402888 low_cardinality_random 512MB 'SELECT * FROM text_test ORDER BY a' 8.59 8.23 8.59 8.33 8.56
+1459402978 low_cardinality_random 512MB 'SELECT * FROM text_test_padding ORDER BY a' 16.41 16.30 16.43 16.27 16.39
+1459403037 low_cardinality_random 512MB 'SELECT * FROM text_test ORDER BY a DESC' 8.59 8.37 8.58 8.38 8.61
+1459403127 low_cardinality_random 512MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 16.90 16.05 16.17 16.13 16.16
+1459403189 low_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM text_test' 9.36 9.26 9.45 9.25 9.35
+1459403246 low_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 9.44 9.34 9.41 9.37 9.37
+1459403405 low_cardinality_random 512MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 29.90 29.90 29.90 30.11 29.99
+1459403558 low_cardinality_random 512MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 24.64 24.54 24.79 24.70 24.62
+1459403706 low_cardinality_random 512MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 24.66 24.69 24.81 24.77 24.65
+1459403787 low_cardinality_random 512MB 'SELECT * FROM numeric_test ORDER BY a' 11.32 11.23 11.31 11.21 11.33
+1459403862 low_cardinality_random 512MB 'SELECT * FROM numeric_test_padding ORDER BY a' 12.49 12.78 12.60 12.76 12.58
+1459403931 low_cardinality_random 512MB 'SELECT * FROM numeric_test ORDER BY a DESC' 11.27 11.18 11.62 11.21 11.23
+1459404005 low_cardinality_random 512MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 12.46 12.76 12.47 12.73 12.60
+1459404082 low_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 12.69 12.73 12.70 12.73 12.98
+1459404159 low_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 12.81 12.79 12.77 12.81 12.80
+1459404314 low_cardinality_random 512MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 28.19 28.51 28.12 28.63 28.31
+1459404482 low_cardinality_random 512MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 28.47 27.88 28.13 27.86 28.07
+1459404650 low_cardinality_random 512MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 28.13 27.92 28.06 27.85 28.05
+1459404697 low_cardinality_random 1GB 'SELECT * FROM int_test ORDER BY a' 3.74 3.75 3.76 3.71 3.74
+1459404721 low_cardinality_random 1GB 'SELECT * FROM int_test_padding ORDER BY a' 3.99 4.01 3.99 4.00 4.01
+1459404744 low_cardinality_random 1GB 'SELECT * FROM int_test ORDER BY a DESC' 3.74 3.72 3.74 3.74 3.74
+1459404767 low_cardinality_random 1GB 'SELECT * FROM int_test_padding ORDER BY a DESC' 4.01 4.02 4.01 4.00 4.00
+1459404785 low_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM int_test' 2.65 2.59 2.67 2.56 2.65
+1459404802 low_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 2.69 2.68 2.71 2.68 2.70
+1459404829 low_cardinality_random 1GB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 4.98 4.87 4.98 4.88 4.98
+1459404895 low_cardinality_random 1GB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 12.09 12.12 12.07 12.09 12.02
+1459404968 low_cardinality_random 1GB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 12.21 12.22 12.21 12.14 12.22
+1459405003 low_cardinality_random 1GB 'SELECT * FROM text_test ORDER BY a' 4.70 4.69 4.69 4.70 4.69
+1459405059 low_cardinality_random 1GB 'SELECT * FROM text_test_padding ORDER BY a' 10.10 9.98 10.16 9.96 10.16
+1459405093 low_cardinality_random 1GB 'SELECT * FROM text_test ORDER BY a DESC' 4.76 4.77 4.76 4.78 4.74
+1459405148 low_cardinality_random 1GB 'SELECT * FROM text_test_padding ORDER BY a DESC' 10.16 9.99 10.14 9.98 10.17
+1459405187 low_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM text_test' 5.85 5.85 5.85 5.85 5.85
+1459405223 low_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 5.91 5.90 5.95 5.91 5.93
+1459405262 low_cardinality_random 1GB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 6.53 6.66 6.56 6.65 6.56
+1459405379 low_cardinality_random 1GB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 22.00 22.09 22.09 22.12 22.05
+1459405512 low_cardinality_random 1GB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 22.31 22.19 22.22 22.33 22.29
+1459405583 low_cardinality_random 1GB 'SELECT * FROM numeric_test ORDER BY a' 9.91 9.63 9.89 9.65 9.86
+1459405645 low_cardinality_random 1GB 'SELECT * FROM numeric_test_padding ORDER BY a' 10.12 10.61 10.12 10.60 10.14
+1459405704 low_cardinality_random 1GB 'SELECT * FROM numeric_test ORDER BY a DESC' 9.90 9.63 9.91 9.64 9.91
+1459405766 low_cardinality_random 1GB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 10.16 10.61 10.16 10.61 10.16
+1459405833 low_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 11.61 11.11 11.57 11.09 11.56
+1459405902 low_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 11.64 11.22 11.63 11.19 11.64
+1459405950 low_cardinality_random 1GB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 7.45 7.45 7.45 7.49 7.49
+1459406089 low_cardinality_random 1GB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 26.08 26.17 26.11 26.24 26.17
+1459406247 low_cardinality_random 1GB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 26.33 26.38 26.27 26.36 26.26
+1459406273 [2016-03-31 08:37:53] truncating tables
+1459406274 [2016-03-31 08:37:54] loading low cardinality tables / almost sorted
+1459406811 [2016-03-31 08:46:51] analyzing
+1459406955 low_cardinality_almost_asc 8MB 'SELECT * FROM int_test ORDER BY a' 7.00 6.07 6.14 6.09 6.07
+1459407304 low_cardinality_almost_asc 8MB 'SELECT * FROM int_test_padding ORDER BY a' 58.77 96.70 65.81 61.59 60.72
+1459407392 low_cardinality_almost_asc 8MB 'SELECT * FROM int_test ORDER BY a DESC' 5.37 5.38 5.32 5.34 5.31
+1459407704 low_cardinality_almost_asc 8MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 60.75 61.19 61.48 61.84 61.29
+1459407783 low_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.70 3.70 3.68 3.70 3.65
+1459407815 low_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.62 5.62 5.63 5.63 5.62
+1459407912 low_cardinality_almost_asc 8MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 18.33 18.36 18.32 18.26 18.33
+1459407978 low_cardinality_almost_asc 8MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 9.38 9.29 9.40 9.38 9.32
+1459408045 low_cardinality_almost_asc 8MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.56 11.51 11.57 11.52 11.49
+1459408268 low_cardinality_almost_asc 8MB 'SELECT * FROM text_test ORDER BY a' 44.18 42.23 41.80 41.63 41.83
+1459408818 low_cardinality_almost_asc 8MB 'SELECT * FROM text_test_padding ORDER BY a' 125.07 95.91 95.88 95.49 95.69
+1459409039 low_cardinality_almost_asc 8MB 'SELECT * FROM text_test ORDER BY a DESC' 25.07 25.25 25.09 25.15 25.08
+1459409439 low_cardinality_almost_asc 8MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 74.29 75.07 75.19 75.32 75.30
+1459409728 low_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM text_test' 42.82 42.77 42.83 42.74 42.80
+1459409996 low_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 45.03 44.89 45.01 44.89 45.04
+1459410534 low_cardinality_almost_asc 8MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 98.78 98.00 98.78 98.25 98.81
+1459410861 low_cardinality_almost_asc 8MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 46.33 45.21 45.78 45.76 46.27
+1459411145 low_cardinality_almost_asc 8MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 47.94 47.68 47.37 47.68 47.43
+1459411297 low_cardinality_almost_asc 8MB 'SELECT * FROM numeric_test ORDER BY a' 22.87 20.23 20.40 20.19 20.40
+1459411672 low_cardinality_almost_asc 8MB 'SELECT * FROM numeric_test_padding ORDER BY a' 77.17 70.11 70.00 70.29 66.65
+1459411807 low_cardinality_almost_asc 8MB 'SELECT * FROM numeric_test ORDER BY a DESC' 13.13 13.05 13.01 13.11 13.14
+1459412154 low_cardinality_almost_asc 8MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 68.14 65.74 67.27 64.14 68.12
+1459412311 low_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 17.62 17.74 17.61 18.05 17.60
+1459412422 low_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 18.69 18.90 18.73 18.92 18.82
+1459412710 low_cardinality_almost_asc 8MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 54.02 53.36 53.96 53.41 53.93
+1459412869 low_cardinality_almost_asc 8MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 20.97 20.94 20.98 20.90 21.05
+1459413000 low_cardinality_almost_asc 8MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 22.15 22.16 22.10 22.07 22.09
+1459413041 low_cardinality_almost_asc 32MB 'SELECT * FROM int_test ORDER BY a' 3.85 3.82 3.79 3.78 3.78
+1459413210 low_cardinality_almost_asc 32MB 'SELECT * FROM int_test_padding ORDER BY a' 51.06 30.20 28.00 27.64 27.89
+1459413257 low_cardinality_almost_asc 32MB 'SELECT * FROM int_test ORDER BY a DESC' 4.00 4.01 4.03 4.00 4.04
+1459413398 low_cardinality_almost_asc 32MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 27.27 27.60 27.34 26.77 27.43
+1459413441 low_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.17 3.20 3.27 3.19 3.28
+1459413471 low_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.21 5.13 5.21 5.16 5.21
+1459413539 low_cardinality_almost_asc 32MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.71 12.66 12.85 12.69 12.82
+1459413588 low_cardinality_almost_asc 32MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.27 7.22 7.27 7.22 7.10
+1459413640 low_cardinality_almost_asc 32MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 8.90 8.99 8.92 8.97 8.95
+1459413754 low_cardinality_almost_asc 32MB 'SELECT * FROM text_test ORDER BY a' 20.93 21.05 20.95 21.03 20.95
+1459414096 low_cardinality_almost_asc 32MB 'SELECT * FROM text_test_padding ORDER BY a' 81.63 70.75 56.30 56.24 56.41
+1459414258 low_cardinality_almost_asc 32MB 'SELECT * FROM text_test ORDER BY a DESC' 20.98 21.00 21.02 21.05 20.94
+1459414510 low_cardinality_almost_asc 32MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 45.87 46.44 46.08 46.36 45.91
+1459414667 low_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM text_test' 22.16 22.12 22.21 22.15 22.17
+1459414811 low_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 24.30 24.32 24.34 24.36 24.33
+1459415109 low_cardinality_almost_asc 32MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 54.57 55.10 54.69 55.17 54.52
+1459415289 low_cardinality_almost_asc 32MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 24.59 24.84 25.13 24.73 25.10
+1459415447 low_cardinality_almost_asc 32MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 27.09 26.20 26.75 27.14 26.35
+1459415527 low_cardinality_almost_asc 32MB 'SELECT * FROM numeric_test ORDER BY a' 10.73 10.39 10.61 10.39 10.62
+1459415729 low_cardinality_almost_asc 32MB 'SELECT * FROM numeric_test_padding ORDER BY a' 39.66 38.09 38.09 38.27 37.98
+1459415833 low_cardinality_almost_asc 32MB 'SELECT * FROM numeric_test ORDER BY a DESC' 13.15 13.16 13.13 13.17 13.13
+1459416013 low_cardinality_almost_asc 32MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 33.09 33.17 33.28 33.42 33.55
+1459416100 low_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 10.72 10.72 10.71 10.69 10.68
+1459416170 low_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 11.93 11.99 11.96 11.90 11.93
+1459416341 low_cardinality_almost_asc 32MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 31.62 31.68 31.65 31.61 31.66
+1459416441 low_cardinality_almost_asc 32MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 13.71 13.69 13.63 13.73 13.67
+1459416528 low_cardinality_almost_asc 32MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 14.65 14.67 14.70 14.74 14.76
+1459416559 low_cardinality_almost_asc 128MB 'SELECT * FROM int_test ORDER BY a' 3.49 3.42 3.44 3.42 3.41
+1459416686 low_cardinality_almost_asc 128MB 'SELECT * FROM int_test_padding ORDER BY a' 37.54 24.38 20.26 20.62 21.01
+1459416726 low_cardinality_almost_asc 128MB 'SELECT * FROM int_test ORDER BY a DESC' 3.71 3.74 3.72 3.77 3.70
+1459416833 low_cardinality_almost_asc 128MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.57 20.46 20.90 20.95 20.20
+1459416867 low_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM int_test' 2.87 2.86 2.88 2.87 2.86
+1459416895 low_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 4.85 4.84 4.83 5.59 4.82
+1459416962 low_cardinality_almost_asc 128MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.50 12.46 12.49 12.49 12.46
+1459417010 low_cardinality_almost_asc 128MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.04 7.05 7.04 7.07 6.97
+1459417062 low_cardinality_almost_asc 128MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 8.95 8.93 8.97 8.94 8.91
+1459417136 low_cardinality_almost_asc 128MB 'SELECT * FROM text_test ORDER BY a' 13.01 12.98 12.98 12.93 13.10
+1459417377 low_cardinality_almost_asc 128MB 'SELECT * FROM text_test_padding ORDER BY a' 60.03 52.77 38.02 38.43 38.33
+1459417478 low_cardinality_almost_asc 128MB 'SELECT * FROM text_test ORDER BY a DESC' 12.60 12.62 12.57 12.61 12.57
+1459417678 low_cardinality_almost_asc 128MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 37.28 37.41 37.65 37.71 37.65
+1459417785 low_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM text_test' 14.04 14.02 14.10 14.01 14.04
+1459417881 low_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 16.16 16.22 16.26 16.18 16.18
+1459418097 low_cardinality_almost_asc 128MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 39.83 39.79 40.38 39.87 39.82
+1459418224 low_cardinality_almost_asc 128MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 16.98 17.59 17.67 17.79 17.43
+1459418339 low_cardinality_almost_asc 128MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 19.62 19.60 19.62 19.60 19.71
+1459418393 low_cardinality_almost_asc 128MB 'SELECT * FROM numeric_test ORDER BY a' 6.76 6.78 6.73 6.78 6.78
+1459418537 low_cardinality_almost_asc 128MB 'SELECT * FROM numeric_test_padding ORDER BY a' 32.47 26.38 26.25 26.35 26.47
+1459418615 low_cardinality_almost_asc 128MB 'SELECT * FROM numeric_test ORDER BY a DESC' 10.24 10.28 10.26 10.27 10.21
+1459418773 low_cardinality_almost_asc 128MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 29.45 29.85 29.42 29.44 29.38
+1459418841 low_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 7.53 7.53 7.54 7.53 7.55
+1459418892 low_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 8.76 8.81 8.80 8.80 8.78
+1459419027 low_cardinality_almost_asc 128MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 25.23 25.27 25.18 25.19 25.16
+1459419100 low_cardinality_almost_asc 128MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 9.46 9.50 9.48 9.52 9.53
+1459419162 low_cardinality_almost_asc 128MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 10.51 10.53 10.53 10.55 10.55
+1459419189 low_cardinality_almost_asc 512MB 'SELECT * FROM int_test ORDER BY a' 3.65 3.34 3.32 3.33 3.33
+1459419329 low_cardinality_almost_asc 512MB 'SELECT * FROM int_test_padding ORDER BY a' 43.79 27.98 21.61 20.54 22.10
+1459419370 low_cardinality_almost_asc 512MB 'SELECT * FROM int_test ORDER BY a DESC' 3.84 3.82 3.82 3.84 3.83
+1459419478 low_cardinality_almost_asc 512MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.58 20.97 20.68 21.06 20.78
+1459419509 low_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM int_test' 1.67 1.68 2.39 1.68 1.69
+1459419529 low_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.66 3.66 3.65 3.66 3.66
+1459419565 low_cardinality_almost_asc 512MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 6.38 6.39 6.42 6.41 6.40
+1459419606 low_cardinality_almost_asc 512MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.06 7.08 7.05 7.05 7.08
+1459419656 low_cardinality_almost_asc 512MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 8.55 8.54 8.56 8.50 8.53
+1459419699 low_cardinality_almost_asc 512MB 'SELECT * FROM text_test ORDER BY a' 6.94 6.84 6.88 6.80 6.87
+1459419892 low_cardinality_almost_asc 512MB 'SELECT * FROM text_test_padding ORDER BY a' 56.22 37.85 30.70 30.80 30.68
+1459419959 low_cardinality_almost_asc 512MB 'SELECT * FROM text_test ORDER BY a DESC' 7.17 7.23 7.15 7.20 7.18
+1459420115 low_cardinality_almost_asc 512MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 28.98 30.73 29.32 30.64 29.43
+1459420185 low_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM text_test' 7.83 7.82 7.85 7.82 7.84
+1459420243 low_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 10.00 10.00 10.05 10.00 10.02
+1459420381 low_cardinality_almost_asc 512MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 25.67 25.58 25.54 25.55 25.58
+1459420473 low_cardinality_almost_asc 512MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 13.50 13.39 13.38 13.30 13.29
+1459420564 low_cardinality_almost_asc 512MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 15.36 15.40 15.43 15.64 15.40
+1459420603 low_cardinality_almost_asc 512MB 'SELECT * FROM numeric_test ORDER BY a' 4.92 4.65 4.66 4.64 4.65
+1459420730 low_cardinality_almost_asc 512MB 'SELECT * FROM numeric_test_padding ORDER BY a' 27.97 23.81 23.91 23.72 23.53
+1459420805 low_cardinality_almost_asc 512MB 'SELECT * FROM numeric_test ORDER BY a DESC' 9.93 9.92 9.93 9.92 9.92
+1459420968 low_cardinality_almost_asc 512MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 30.59 30.83 30.47 30.67 30.92
+1459421017 low_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 3.68 3.67 3.68 3.69 3.68
+1459421046 low_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 4.94 4.95 4.96 4.94 4.94
+1459421151 low_cardinality_almost_asc 512MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 20.03 20.03 20.02 19.96 20.01
+1459421212 low_cardinality_almost_asc 512MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 8.35 8.34 8.31 8.32 8.27
+1459421268 low_cardinality_almost_asc 512MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 9.41 9.31 9.32 9.38 9.38
+1459421286 low_cardinality_almost_asc 1GB 'SELECT * FROM int_test ORDER BY a' 1.79 1.89 1.77 1.80 1.77
+1459421429 low_cardinality_almost_asc 1GB 'SELECT * FROM int_test_padding ORDER BY a' 47.11 30.13 21.18 21.65 21.36
+1459421463 low_cardinality_almost_asc 1GB 'SELECT * FROM int_test ORDER BY a DESC' 2.35 2.41 2.39 2.40 2.39
+1459421572 low_cardinality_almost_asc 1GB 'SELECT * FROM int_test_padding ORDER BY a DESC' 21.23 21.38 21.74 20.92 21.26
+1459421602 low_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM int_test' 1.68 1.68 1.68 1.69 1.69
+1459421622 low_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.67 3.66 3.68 3.68 3.67
+1459421658 low_cardinality_almost_asc 1GB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 6.41 6.41 6.39 6.42 6.41
+1459421691 low_cardinality_almost_asc 1GB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 5.31 5.33 5.33 5.36 5.31
+1459421733 low_cardinality_almost_asc 1GB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 7.24 7.29 7.23 7.26 7.28
+1459421764 low_cardinality_almost_asc 1GB 'SELECT * FROM text_test ORDER BY a' 4.83 4.66 4.67 4.66 4.66
+1459421953 low_cardinality_almost_asc 1GB 'SELECT * FROM text_test_padding ORDER BY a' 56.33 39.13 32.57 28.26 27.81
+1459422003 low_cardinality_almost_asc 1GB 'SELECT * FROM text_test ORDER BY a DESC' 4.37 4.38 4.38 4.39 4.39
+1459422142 low_cardinality_almost_asc 1GB 'SELECT * FROM text_test_padding ORDER BY a DESC' 26.89 27.14 26.93 26.91 26.83
+1459422198 low_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM text_test' 5.70 5.70 5.71 5.70 5.74
+1459422243 low_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 7.92 7.93 7.93 7.91 7.90
+1459422295 low_cardinality_almost_asc 1GB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 8.71 8.68 8.69 8.69 8.66
+1459422358 low_cardinality_almost_asc 1GB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 10.86 10.87 10.89 10.90 10.91
+1459422433 low_cardinality_almost_asc 1GB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 12.93 12.80 12.91 12.86 12.96
+1459422459 low_cardinality_almost_asc 1GB 'SELECT * FROM numeric_test ORDER BY a' 2.58 2.53 2.53 2.56 2.52
+1459422585 low_cardinality_almost_asc 1GB 'SELECT * FROM numeric_test_padding ORDER BY a' 27.77 24.09 23.84 23.92 24.24
+1459422653 low_cardinality_almost_asc 1GB 'SELECT * FROM numeric_test ORDER BY a DESC' 8.83 8.85 8.85 8.84 8.84
+1459422813 low_cardinality_almost_asc 1GB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 30.00 29.91 30.47 29.99 30.37
+1459422864 low_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 3.66 3.67 3.68 3.67 3.69
+1459422892 low_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 4.91 4.94 4.93 4.98 4.92
+1459422943 low_cardinality_almost_asc 1GB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 9.06 9.06 9.03 9.04 9.09
+1459422982 low_cardinality_almost_asc 1GB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 6.09 6.06 6.12 6.09 6.07
+1459423024 low_cardinality_almost_asc 1GB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 7.09 7.11 7.11 7.07 7.10
+1459423031 [2016-03-31 13:17:11] truncating tables
+1459423033 [2016-03-31 13:17:13] loading high cardinality tables / sorted
+1459423473 [2016-03-31 13:24:33] analyzing
+1459423625 high_cardinality_sorted 8MB 'SELECT * FROM int_test ORDER BY a' 7.06 6.08 6.06 6.06 6.10
+1459423976 high_cardinality_sorted 8MB 'SELECT * FROM int_test_padding ORDER BY a' 60.11 98.01 62.63 63.15 61.38
+1459424068 high_cardinality_sorted 8MB 'SELECT * FROM int_test ORDER BY a DESC' 5.97 5.96 6.05 5.97 5.98
+1459424383 high_cardinality_sorted 8MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 62.82 61.47 61.99 61.76 60.94
+1459424465 high_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.70 3.67 3.72 3.67 3.71
+1459424497 high_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.66 5.65 5.63 5.65 5.63
+1459424595 high_cardinality_sorted 8MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 18.45 18.47 18.48 18.40 18.44
+1459424660 high_cardinality_sorted 8MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 9.40 9.34 9.39 9.37 9.32
+1459424727 high_cardinality_sorted 8MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.58 11.46 11.50 11.16 11.43
+1459424952 high_cardinality_sorted 8MB 'SELECT * FROM text_test ORDER BY a' 44.84 42.33 42.46 42.20 42.46
+1459425622 high_cardinality_sorted 8MB 'SELECT * FROM text_test_padding ORDER BY a' 146.81 122.93 119.45 119.37 119.41
+1459425877 high_cardinality_sorted 8MB 'SELECT * FROM text_test ORDER BY a DESC' 26.92 27.01 26.99 26.98 26.94
+1459426504 high_cardinality_sorted 8MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 120.22 119.95 120.12 119.93 120.11
+1459426842 high_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM text_test' 43.52 43.52 43.49 43.46 43.50
+1459427214 high_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 66.54 65.51 65.65 65.43 65.60
+1459427969 high_cardinality_sorted 8MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 138.06 137.88 137.87 138.00 137.97
+1459428340 high_cardinality_sorted 8MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 46.42 47.13 46.50 46.61 46.55
+1459428743 high_cardinality_sorted 8MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 70.67 71.63 71.59 70.89 71.36
+1459428947 high_cardinality_sorted 8MB 'SELECT * FROM numeric_test ORDER BY a' 28.55 25.79 25.75 25.83 25.72
+1459429340 high_cardinality_sorted 8MB 'SELECT * FROM numeric_test_padding ORDER BY a' 79.92 71.97 71.41 70.93 72.88
+1459429541 high_cardinality_sorted 8MB 'SELECT * FROM numeric_test ORDER BY a DESC' 25.79 25.74 25.64 26.12 25.60
+1459429927 high_cardinality_sorted 8MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 71.97 71.93 72.36 72.30 71.39
+1459430119 high_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 24.08 24.10 24.01 23.86 23.87
+1459430270 high_cardinality_sorted 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 25.31 25.63 25.07 25.27 25.14
+1459430629 high_cardinality_sorted 8MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 66.66 66.74 67.43 66.68 66.71
+1459430856 high_cardinality_sorted 8MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 31.13 32.49 32.06 32.24 32.26
+1459431055 high_cardinality_sorted 8MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 33.48 33.59 33.51 33.24 33.08
+1459431107 high_cardinality_sorted 32MB 'SELECT * FROM int_test ORDER BY a' 3.80 3.80 3.79 3.80 3.81
+1459431275 high_cardinality_sorted 32MB 'SELECT * FROM int_test_padding ORDER BY a' 50.32 29.35 27.81 27.99 28.25
+1459431327 high_cardinality_sorted 32MB 'SELECT * FROM int_test ORDER BY a DESC' 4.72 4.75 4.77 4.71 4.74
+1459431467 high_cardinality_sorted 32MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 27.17 26.75 27.29 27.18 27.13
+1459431510 high_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.20 3.30 3.28 3.29 3.29
+1459431539 high_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.25 5.17 5.19 5.21 5.21
+1459431609 high_cardinality_sorted 32MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.67 12.82 12.84 12.89 12.89
+1459431658 high_cardinality_sorted 32MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.36 7.30 7.26 7.19 7.18
+1459431710 high_cardinality_sorted 32MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 9.00 8.97 9.02 9.03 8.98
+1459431828 high_cardinality_sorted 32MB 'SELECT * FROM text_test ORDER BY a' 21.78 21.68 21.74 21.74 21.80
+1459432252 high_cardinality_sorted 32MB 'SELECT * FROM text_test_padding ORDER BY a' 90.37 89.14 74.40 74.77 73.95
+1459432443 high_cardinality_sorted 32MB 'SELECT * FROM text_test ORDER BY a DESC' 23.13 23.11 23.17 23.14 23.18
+1459432835 high_cardinality_sorted 32MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 73.85 73.81 74.01 73.90 73.93
+1459433024 high_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM text_test' 22.90 23.03 22.94 23.03 22.90
+1459433256 high_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 42.69 41.52 41.46 41.47 41.43
+1459433641 high_cardinality_sorted 32MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 68.51 68.96 68.94 68.87 69.00
+1459433839 high_cardinality_sorted 32MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 24.98 26.34 26.20 25.28 25.56
+1459434092 high_cardinality_sorted 32MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 45.16 45.51 45.44 45.48 45.49
+1459434223 high_cardinality_sorted 32MB 'SELECT * FROM numeric_test ORDER BY a' 17.43 16.94 16.96 17.04 17.04
+1459434459 high_cardinality_sorted 32MB 'SELECT * FROM numeric_test_padding ORDER BY a' 46.17 42.91 43.60 43.23 42.91
+1459434587 high_cardinality_sorted 32MB 'SELECT * FROM numeric_test ORDER BY a DESC' 16.95 16.95 16.99 16.96 16.99
+1459434819 high_cardinality_sorted 32MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 42.67 42.76 42.79 43.63 43.14
+1459434947 high_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 16.96 16.98 17.06 17.05 17.06
+1459435055 high_cardinality_sorted 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 18.17 18.27 18.24 18.28 18.20
+1459435298 high_cardinality_sorted 32MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 44.76 44.82 44.83 44.84 45.02
+1459435460 high_cardinality_sorted 32MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 23.55 23.60 23.53 23.56 23.49
+1459435607 high_cardinality_sorted 32MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 24.71 24.67 24.69 24.71 24.64
+1459435649 high_cardinality_sorted 128MB 'SELECT * FROM int_test ORDER BY a' 3.46 3.40 3.40 3.41 3.44
+1459435792 high_cardinality_sorted 128MB 'SELECT * FROM int_test_padding ORDER BY a' 43.41 32.89 20.40 21.36 21.18
+1459435835 high_cardinality_sorted 128MB 'SELECT * FROM int_test ORDER BY a DESC' 4.48 4.46 4.47 4.46 4.45
+1459435942 high_cardinality_sorted 128MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.07 20.60 19.97 21.33 21.31
+1459435977 high_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM int_test' 2.92 2.87 2.88 2.88 2.88
+1459436005 high_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 4.85 4.88 4.83 4.87 4.86
+1459436073 high_cardinality_sorted 128MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.54 12.72 12.59 12.75 12.53
+1459436121 high_cardinality_sorted 128MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.03 7.06 7.03 7.10 7.06
+1459436173 high_cardinality_sorted 128MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 8.92 8.93 8.94 9.01 8.90
+1459436249 high_cardinality_sorted 128MB 'SELECT * FROM text_test ORDER BY a' 13.54 13.54 13.54 13.54 13.54
+1459436548 high_cardinality_sorted 128MB 'SELECT * FROM text_test_padding ORDER BY a' 63.50 66.96 51.45 51.31 51.43
+1459436673 high_cardinality_sorted 128MB 'SELECT * FROM text_test ORDER BY a DESC' 14.75 14.74 14.74 14.78 14.75
+1459436945 high_cardinality_sorted 128MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 51.39 51.35 51.36 51.47 51.44
+1459437071 high_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM text_test' 14.52 14.77 14.57 14.67 14.54
+1459437235 high_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 29.86 29.86 29.84 29.92 29.83
+1459437522 high_cardinality_sorted 128MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 51.38 51.62 51.37 51.55 51.29
+1459437664 high_cardinality_sorted 128MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 18.23 18.36 17.90 18.29 17.61
+1459437855 high_cardinality_sorted 128MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 34.94 34.68 34.57 34.51 34.56
+1459437946 high_cardinality_sorted 128MB 'SELECT * FROM numeric_test ORDER BY a' 11.44 11.43 11.44 11.43 11.39
+1459438126 high_cardinality_sorted 128MB 'SELECT * FROM numeric_test_padding ORDER BY a' 39.13 32.09 32.25 32.05 32.50
+1459438216 high_cardinality_sorted 128MB 'SELECT * FROM numeric_test ORDER BY a DESC' 11.40 11.41 12.28 11.39 11.37
+1459438387 high_cardinality_sorted 128MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 32.02 31.76 31.98 31.88 31.99
+1459438480 high_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 12.32 12.34 12.32 12.33 12.35
+1459438560 high_cardinality_sorted 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 13.55 13.55 13.58 13.61 13.56
+1459438752 high_cardinality_sorted 128MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 35.41 35.67 35.39 35.65 35.34
+1459438871 high_cardinality_sorted 128MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 16.62 16.41 16.67 16.32 17.17
+1459438974 high_cardinality_sorted 128MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 17.37 17.35 17.36 17.43 17.25
+1459439008 high_cardinality_sorted 512MB 'SELECT * FROM int_test ORDER BY a' 3.86 3.33 3.33 3.33 3.31
+1459439153 high_cardinality_sorted 512MB 'SELECT * FROM int_test_padding ORDER BY a' 44.09 33.41 20.15 21.92 21.32
+1459439196 high_cardinality_sorted 512MB 'SELECT * FROM int_test ORDER BY a DESC' 4.55 4.55 4.55 4.54 4.56
+1459439307 high_cardinality_sorted 512MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.51 21.02 21.13 22.51 20.87
+1459439336 high_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM int_test' 1.68 1.69 1.69 1.69 1.70
+1459439356 high_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.62 3.67 3.65 3.67 3.69
+1459439397 high_cardinality_sorted 512MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 7.26 7.26 7.33 7.24 7.35
+1459439440 high_cardinality_sorted 512MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 7.07 7.02 7.19 7.10 7.15
+1459439491 high_cardinality_sorted 512MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 9.09 9.07 9.01 9.01 8.60
+1459439536 high_cardinality_sorted 512MB 'SELECT * FROM text_test ORDER BY a' 7.16 7.13 7.10 7.15 7.38
+1459439769 high_cardinality_sorted 512MB 'SELECT * FROM text_test_padding ORDER BY a' 55.81 50.61 39.70 39.69 39.66
+1459439856 high_cardinality_sorted 512MB 'SELECT * FROM text_test ORDER BY a DESC' 9.33 9.87 9.59 9.35 9.58
+1459440065 high_cardinality_sorted 512MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 39.65 39.82 39.66 39.74 40.06
+1459440145 high_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM text_test' 8.14 8.18 8.32 8.10 8.31
+1459440266 high_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 23.50 22.32 22.27 22.30 22.26
+1459440492 high_cardinality_sorted 512MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 40.69 40.62 40.71 40.54 40.68
+1459440600 high_cardinality_sorted 512MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 13.64 13.72 13.66 13.56 13.52
+1459440754 high_cardinality_sorted 512MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 27.92 27.89 27.92 27.93 27.96
+1459440824 high_cardinality_sorted 512MB 'SELECT * FROM numeric_test ORDER BY a' 8.38 8.30 8.33 8.30 8.34
+1459440982 high_cardinality_sorted 512MB 'SELECT * FROM numeric_test_padding ORDER BY a' 34.96 28.23 29.58 28.24 29.29
+1459441053 high_cardinality_sorted 512MB 'SELECT * FROM numeric_test ORDER BY a DESC' 8.26 8.27 8.28 8.26 8.31
+1459441209 high_cardinality_sorted 512MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 29.54 28.32 29.90 29.74 29.77
+1459441285 high_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 9.63 9.71 9.62 9.68 9.62
+1459441350 high_cardinality_sorted 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 10.82 10.90 10.81 10.91 11.62
+1459441482 high_cardinality_sorted 512MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 24.26 24.19 24.05 24.12 24.06
+1459441580 high_cardinality_sorted 512MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 14.77 14.93 14.83 14.91 14.81
+1459441676 high_cardinality_sorted 512MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 16.16 15.87 16.18 17.24 16.20
+1459441701 high_cardinality_sorted 1GB 'SELECT * FROM int_test ORDER BY a' 1.77 1.77 1.78 1.76 1.76
+1459441849 high_cardinality_sorted 1GB 'SELECT * FROM int_test_padding ORDER BY a' 47.91 34.43 20.73 21.76 21.52
+1459441887 high_cardinality_sorted 1GB 'SELECT * FROM int_test ORDER BY a DESC' 3.37 3.18 3.14 3.20 3.14
+1459442001 high_cardinality_sorted 1GB 'SELECT * FROM int_test_padding ORDER BY a DESC' 21.35 22.51 22.68 21.27 22.92
+1459442031 high_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM int_test' 1.69 1.69 1.69 1.69 1.69
+1459442052 high_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.64 3.72 3.67 3.69 3.71
+1459442092 high_cardinality_sorted 1GB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 7.26 7.38 7.30 7.37 7.30
+1459442126 high_cardinality_sorted 1GB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 5.31 5.30 5.38 5.27 5.33
+1459442168 high_cardinality_sorted 1GB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 7.30 7.37 7.29 7.29 7.31
+1459442196 high_cardinality_sorted 1GB 'SELECT * FROM text_test ORDER BY a' 4.25 4.14 4.13 4.14 4.13
+1459442417 high_cardinality_sorted 1GB 'SELECT * FROM text_test_padding ORDER BY a' 60.54 49.01 35.90 35.82 35.94
+1459442486 high_cardinality_sorted 1GB 'SELECT * FROM text_test ORDER BY a DESC' 6.51 6.49 6.50 6.49 6.50
+1459442672 high_cardinality_sorted 1GB 'SELECT * FROM text_test_padding ORDER BY a DESC' 35.86 35.83 35.85 35.87 35.86
+1459442736 high_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM text_test' 5.22 5.36 5.26 5.37 5.24
+1459442839 high_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 19.47 19.44 19.45 19.47 19.44
+1459442928 high_cardinality_sorted 1GB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 14.05 13.99 14.02 13.96 14.04
+1459442994 high_cardinality_sorted 1GB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 10.26 10.30 10.38 10.35 10.31
+1459443133 high_cardinality_sorted 1GB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 25.76 25.78 25.74 25.84 25.72
+1459443190 high_cardinality_sorted 1GB 'SELECT * FROM numeric_test ORDER BY a' 6.22 6.09 6.14 6.08 6.13
+1459443330 high_cardinality_sorted 1GB 'SELECT * FROM numeric_test_padding ORDER BY a' 30.76 25.99 25.84 25.89 25.64
+1459443386 high_cardinality_sorted 1GB 'SELECT * FROM numeric_test ORDER BY a DESC' 6.13 6.11 6.13 6.09 6.13
+1459443519 high_cardinality_sorted 1GB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 25.39 25.44 25.33 25.46 25.31
+1459443581 high_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 7.20 7.22 7.22 7.21 7.21
+1459443631 high_cardinality_sorted 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 8.45 8.42 8.45 8.40 8.45
+1459443690 high_cardinality_sorted 1GB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 11.15 10.02 10.06 10.03 10.04
+1459443764 high_cardinality_sorted 1GB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 12.70 12.70 12.69 12.67 12.80
+1459443846 high_cardinality_sorted 1GB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 13.88 13.79 13.88 13.81 13.91
+1459443860 [2016-03-31 19:04:20] truncating tables
+1459443862 [2016-03-31 19:04:22] loading high cardinality tables / random
+1459444055 [2016-03-31 19:07:35] analyzing
+1459444119 high_cardinality_random 8MB 'SELECT * FROM int_test ORDER BY a' 9.95 9.54 10.06 9.58 10.04
+1459444192 high_cardinality_random 8MB 'SELECT * FROM int_test_padding ORDER BY a' 12.42 12.68 12.70 12.46 12.79
+1459444255 high_cardinality_random 8MB 'SELECT * FROM int_test ORDER BY a DESC' 10.10 10.10 10.11 10.02 10.08
+1459444328 high_cardinality_random 8MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 12.71 12.78 12.49 12.84 12.82
+1459444374 high_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM int_test' 6.65 6.65 6.67 6.63 6.67
+1459444414 high_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 6.68 6.66 6.69 6.67 6.70
+1459444539 high_cardinality_random 8MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 23.31 24.65 23.35 23.18 23.39
+1459444632 high_cardinality_random 8MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 13.95 13.96 14.12 14.02 14.01
+1459444718 high_cardinality_random 8MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 14.29 14.11 14.27 14.23 14.27
+1459445062 high_cardinality_random 8MB 'SELECT * FROM text_test ORDER BY a' 66.09 66.19 66.09 66.13 66.11
+1459445542 high_cardinality_random 8MB 'SELECT * FROM text_test_padding ORDER BY a' 82.64 82.85 82.69 82.83 82.75
+1459445956 high_cardinality_random 8MB 'SELECT * FROM text_test ORDER BY a DESC' 66.17 66.23 66.05 66.19 66.07
+1459446437 high_cardinality_random 8MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 82.77 82.91 82.78 82.99 82.79
+1459446856 high_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM text_test' 67.28 67.29 67.23 67.21 67.23
+1459447260 high_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 67.34 67.36 67.29 67.33 67.22
+1459448141 high_cardinality_random 8MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 162.58 163.31 162.46 163.39 162.47
+1459448667 high_cardinality_random 8MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 72.43 73.38 72.23 72.90 71.27
+1459449099 high_cardinality_random 8MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 71.73 71.53 71.68 71.60 72.03
+1459449301 high_cardinality_random 8MB 'SELECT * FROM numeric_test ORDER BY a' 26.10 25.71 26.02 25.69 26.03
+1459449474 high_cardinality_random 8MB 'SELECT * FROM numeric_test_padding ORDER BY a' 29.65 29.45 29.44 29.62 29.49
+1459449634 high_cardinality_random 8MB 'SELECT * FROM numeric_test ORDER BY a DESC' 25.94 25.94 26.16 25.75 25.68
+1459449807 high_cardinality_random 8MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 29.48 29.71 29.50 29.45 29.67
+1459449957 high_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 24.01 23.83 24.01 24.01 23.87
+1459450101 high_cardinality_random 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 23.92 24.09 24.02 23.91 23.99
+1459450449 high_cardinality_random 8MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 65.12 64.87 64.92 64.93 64.94
+1459450675 high_cardinality_random 8MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 32.64 31.91 31.89 32.08 31.91
+1459450868 high_cardinality_random 8MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 32.18 31.99 31.90 32.28 32.05
+1459450941 high_cardinality_random 32MB 'SELECT * FROM int_test ORDER BY a' 8.32 8.32 8.30 8.27 8.27
+1459450999 high_cardinality_random 32MB 'SELECT * FROM int_test_padding ORDER BY a' 9.86 9.85 9.85 9.85 9.88
+1459451050 high_cardinality_random 32MB 'SELECT * FROM int_test ORDER BY a DESC' 8.33 8.31 8.32 8.30 8.26
+1459451109 high_cardinality_random 32MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 9.87 9.85 9.86 9.87 10.45
+1459451151 high_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM int_test' 6.37 6.39 6.34 6.40 6.67
+1459451189 high_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 6.45 6.44 6.43 6.46 6.42
+1459451290 high_cardinality_random 32MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 19.02 19.01 18.96 18.77 18.82
+1459451372 high_cardinality_random 32MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 12.52 12.43 12.51 12.51 12.47
+1459451447 high_cardinality_random 32MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 12.64 12.66 12.61 12.63 12.67
+1459451687 high_cardinality_random 32MB 'SELECT * FROM text_test ORDER BY a' 45.21 45.29 45.26 45.30 45.31
+1459451952 high_cardinality_random 32MB 'SELECT * FROM text_test_padding ORDER BY a' 44.06 44.06 44.04 44.13 44.05
+1459452223 high_cardinality_random 32MB 'SELECT * FROM text_test ORDER BY a DESC' 45.26 45.28 45.31 45.27 45.31
+1459452489 high_cardinality_random 32MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 44.16 44.14 44.17 44.18 44.22
+1459452765 high_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM text_test' 46.32 46.42 46.43 46.39 46.41
+1459453044 high_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 46.42 46.50 46.49 46.39 46.49
+1459453579 high_cardinality_random 32MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 97.67 97.65 97.76 97.65 97.68
+1459453932 high_cardinality_random 32MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 50.77 51.77 50.44 50.50 51.67
+1459454239 high_cardinality_random 32MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 51.03 52.12 50.76 50.78 52.05
+1459454376 high_cardinality_random 32MB 'SELECT * FROM numeric_test ORDER BY a' 16.92 16.91 17.00 16.90 16.95
+1459454494 high_cardinality_random 32MB 'SELECT * FROM numeric_test_padding ORDER BY a' 20.11 20.23 20.08 20.25 20.14
+1459454599 high_cardinality_random 32MB 'SELECT * FROM numeric_test ORDER BY a DESC' 16.86 16.94 16.98 16.98 16.92
+1459454718 high_cardinality_random 32MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 20.42 20.38 20.33 20.40 20.40
+1459454823 high_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 17.06 17.00 16.99 17.00 16.98
+1459454926 high_cardinality_random 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 17.09 17.06 16.92 17.08 17.06
+1459455158 high_cardinality_random 32MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 42.91 43.05 43.04 42.94 43.08
+1459455318 high_cardinality_random 32MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 23.44 23.37 23.44 23.33 23.35
+1459455459 high_cardinality_random 32MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 23.57 23.56 23.54 23.50 23.58
+1459455516 high_cardinality_random 128MB 'SELECT * FROM int_test ORDER BY a' 6.66 6.70 6.68 6.68 6.83
+1459455568 high_cardinality_random 128MB 'SELECT * FROM int_test_padding ORDER BY a' 8.95 8.93 8.93 8.91 8.91
+1459455610 high_cardinality_random 128MB 'SELECT * FROM int_test ORDER BY a DESC' 6.67 6.68 6.67 6.65 6.70
+1459455661 high_cardinality_random 128MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 8.97 8.94 8.85 8.95 8.93
+1459455695 high_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.97 4.98 4.97 4.96 4.98
+1459455726 high_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.02 5.03 5.02 5.02 5.02
+1459455820 high_cardinality_random 128MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 17.55 19.56 17.61 17.56 17.55
+1459455895 high_cardinality_random 128MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 11.46 11.48 11.41 11.51 11.50
+1459455966 high_cardinality_random 128MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.60 11.65 11.91 11.90 11.88
+1459456130 high_cardinality_random 128MB 'SELECT * FROM text_test ORDER BY a' 30.39 30.41 30.44 30.42 30.40
+1459456310 high_cardinality_random 128MB 'SELECT * FROM text_test_padding ORDER BY a' 29.88 29.87 29.92 29.95 29.99
+1459456492 high_cardinality_random 128MB 'SELECT * FROM text_test ORDER BY a DESC' 30.48 30.46 30.47 30.47 30.48
+1459456673 high_cardinality_random 128MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 29.90 29.98 29.95 29.95 29.95
+1459456860 high_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM text_test' 31.56 31.56 31.54 31.62 31.57
+1459457050 high_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 31.61 31.66 31.68 31.65 31.65
+1459457434 high_cardinality_random 128MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 70.45 70.41 70.47 70.47 70.48
+1459457689 high_cardinality_random 128MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 36.89 36.75 36.75 36.85 36.84
+1459457910 high_cardinality_random 128MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 36.52 36.98 37.04 36.96 37.09
+1459458005 high_cardinality_random 128MB 'SELECT * FROM numeric_test ORDER BY a' 11.40 11.44 11.43 11.43 11.41
+1459458092 high_cardinality_random 128MB 'SELECT * FROM numeric_test_padding ORDER BY a' 15.28 15.21 15.18 15.13 15.19
+1459458164 high_cardinality_random 128MB 'SELECT * FROM numeric_test ORDER BY a DESC' 11.37 11.41 11.40 11.40 11.39
+1459458252 high_cardinality_random 128MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 15.23 15.29 15.31 15.37 15.26
+1459458329 high_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 12.32 12.33 12.27 12.34 12.34
+1459458403 high_cardinality_random 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 12.38 12.38 12.42 12.41 12.41
+1459458584 high_cardinality_random 128MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 33.71 33.61 33.60 33.65 33.63
+1459458702 high_cardinality_random 128MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 17.24 16.38 17.15 17.16 16.27
+1459458801 high_cardinality_random 128MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 16.52 16.42 16.50 16.36 16.45
+1459458849 high_cardinality_random 512MB 'SELECT * FROM int_test ORDER BY a' 6.22 6.25 6.22 6.24 6.27
+1459458894 high_cardinality_random 512MB 'SELECT * FROM int_test_padding ORDER BY a' 7.79 7.80 7.82 7.82 7.80
+1459458933 high_cardinality_random 512MB 'SELECT * FROM int_test ORDER BY a DESC' 6.22 6.21 6.23 6.25 6.24
+1459458979 high_cardinality_random 512MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 7.83 7.80 7.81 7.83 7.79
+1459459005 high_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.71 3.72 3.72 3.71 3.70
+1459459028 high_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.77 3.78 3.82 3.78 3.78
+1459459095 high_cardinality_random 512MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.68 12.67 12.68 12.68 12.66
+1459459169 high_cardinality_random 512MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 12.70 12.24 12.26 12.31 12.25
+1459459243 high_cardinality_random 512MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 12.36 12.34 12.37 12.30 12.34
+1459459313 high_cardinality_random 512MB 'SELECT * FROM text_test ORDER BY a' 11.48 11.22 11.47 11.48 11.42
+1459459433 high_cardinality_random 512MB 'SELECT * FROM text_test_padding ORDER BY a' 21.68 21.78 21.56 21.73 21.59
+1459459511 high_cardinality_random 512MB 'SELECT * FROM text_test ORDER BY a DESC' 11.29 11.54 11.29 11.50 11.33
+1459459632 high_cardinality_random 512MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 21.67 21.77 21.61 21.78 21.71
+1459459715 high_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM text_test' 12.18 12.46 12.22 12.49 12.25
+1459459789 high_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 12.32 12.53 12.32 12.45 12.33
+1459459991 high_cardinality_random 512MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 37.77 37.78 37.81 37.83 37.79
+1459460121 high_cardinality_random 512MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 18.38 18.34 18.36 18.56 18.66
+1459460232 high_cardinality_random 512MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 18.40 18.46 18.68 18.67 18.37
+1459460293 high_cardinality_random 512MB 'SELECT * FROM numeric_test ORDER BY a' 8.28 8.27 8.27 8.26 8.25
+1459460349 high_cardinality_random 512MB 'SELECT * FROM numeric_test_padding ORDER BY a' 9.49 9.61 9.49 9.60 9.48
+1459460400 high_cardinality_random 512MB 'SELECT * FROM numeric_test ORDER BY a DESC' 8.23 8.26 8.31 8.29 8.28
+1459460456 high_cardinality_random 512MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 9.44 9.64 9.54 9.59 9.47
+1459460513 high_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 9.66 9.60 9.67 9.62 9.68
+1459460572 high_cardinality_random 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 9.74 9.66 9.91 9.68 9.75
+1459460693 high_cardinality_random 512MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 22.35 22.27 22.42 22.23 22.35
+1459460788 high_cardinality_random 512MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 14.49 14.57 14.42 14.64 14.42
+1459460876 high_cardinality_random 512MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 14.60 14.73 14.60 14.69 14.60
+1459460915 high_cardinality_random 1GB 'SELECT * FROM int_test ORDER BY a' 4.82 4.82 4.83 4.81 4.83
+1459460945 high_cardinality_random 1GB 'SELECT * FROM int_test_padding ORDER BY a' 5.08 5.09 5.09 5.07 5.08
+1459460974 high_cardinality_random 1GB 'SELECT * FROM int_test ORDER BY a DESC' 4.81 4.83 4.81 4.80 4.81
+1459461004 high_cardinality_random 1GB 'SELECT * FROM int_test_padding ORDER BY a DESC' 5.07 5.10 5.07 5.08 5.09
+1459461028 high_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.66 3.71 3.67 3.73 3.66
+1459461051 high_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 3.76 3.78 3.75 3.78 3.74
+1459461118 high_cardinality_random 1GB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 12.58 12.66 12.62 12.67 12.62
+1459461185 high_cardinality_random 1GB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 11.01 10.95 11.06 10.94 10.99
+1459461252 high_cardinality_random 1GB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 11.20 11.18 11.16 11.12 11.19
+1459461301 high_cardinality_random 1GB 'SELECT * FROM text_test ORDER BY a' 7.54 7.59 7.53 7.55 7.52
+1459461374 high_cardinality_random 1GB 'SELECT * FROM text_test_padding ORDER BY a' 12.99 13.22 12.97 13.15 13.00
+1459461425 high_cardinality_random 1GB 'SELECT * FROM text_test ORDER BY a DESC' 7.64 7.57 7.59 7.58 7.61
+1459461498 high_cardinality_random 1GB 'SELECT * FROM text_test_padding ORDER BY a DESC' 13.06 13.19 13.03 13.25 13.02
+1459461555 high_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM text_test' 8.62 8.73 8.61 8.74 8.67
+1459461607 high_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 8.71 8.82 8.72 8.77 8.75
+1459461653 high_cardinality_random 1GB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 7.44 7.37 7.44 7.33 7.42
+1459461738 high_cardinality_random 1GB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 15.53 15.48 15.65 15.46 15.63
+1459461832 high_cardinality_random 1GB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 15.70 15.57 15.64 15.64 15.74
+1459461878 high_cardinality_random 1GB 'SELECT * FROM numeric_test ORDER BY a' 6.15 6.06 6.09 6.05 6.12
+1459461917 high_cardinality_random 1GB 'SELECT * FROM numeric_test_padding ORDER BY a' 6.54 6.52 6.54 6.53 6.53
+1459461954 high_cardinality_random 1GB 'SELECT * FROM numeric_test ORDER BY a DESC' 6.12 6.09 6.12 6.08 6.15
+1459461993 high_cardinality_random 1GB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 6.59 6.57 6.59 6.57 6.59
+1459462036 high_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 7.20 7.21 7.20 7.19 7.25
+1459462080 high_cardinality_random 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 7.27 7.27 7.33 7.24 7.26
+1459462128 high_cardinality_random 1GB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 8.24 8.22 8.23 8.22 8.22
+1459462200 high_cardinality_random 1GB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 12.64 12.60 12.66 12.66 12.66
+1459462276 high_cardinality_random 1GB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 12.83 12.79 12.82 12.74 12.85
+1459462289 [2016-04-01 00:11:29] truncating tables
+1459462290 [2016-04-01 00:11:30] loading high cardinality tables / almost sorted
+1459462829 [2016-04-01 00:20:29] analyzing
+1459462974 high_cardinality_almost_asc 8MB 'SELECT * FROM int_test ORDER BY a' 8.11 7.28 7.26 7.23 7.23
+1459463325 high_cardinality_almost_asc 8MB 'SELECT * FROM int_test_padding ORDER BY a' 59.17 94.20 66.82 60.76 63.49
+1459463418 high_cardinality_almost_asc 8MB 'SELECT * FROM int_test ORDER BY a DESC' 6.26 6.26 6.29 6.26 6.28
+1459463734 high_cardinality_almost_asc 8MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 62.80 62.55 60.97 60.96 63.22
+1459463820 high_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.72 4.71 4.74 4.69 4.72
+1459463858 high_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 6.67 6.70 6.68 6.67 6.68
+1459463969 high_cardinality_almost_asc 8MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 20.90 20.89 20.90 20.87 20.78
+1459464051 high_cardinality_almost_asc 8MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 12.03 11.84 12.70 12.09 12.05
+1459464132 high_cardinality_almost_asc 8MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 13.73 13.65 13.69 13.66 13.69
+1459464397 high_cardinality_almost_asc 8MB 'SELECT * FROM text_test ORDER BY a' 52.13 49.94 49.76 49.88 49.79
+1459464971 high_cardinality_almost_asc 8MB 'SELECT * FROM text_test_padding ORDER BY a' 126.76 100.86 99.03 98.51 98.94
+1459465235 high_cardinality_almost_asc 8MB 'SELECT * FROM text_test ORDER BY a DESC' 33.50 33.15 32.98 33.12 32.95
+1459465664 high_cardinality_almost_asc 8MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 78.48 79.36 79.90 78.57 78.70
+1459466000 high_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM text_test' 51.02 51.89 50.97 51.95 50.95
+1459466321 high_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 53.35 54.26 53.30 54.27 53.34
+1459466949 high_cardinality_almost_asc 8MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 115.12 114.63 115.18 114.71 115.28
+1459467345 high_cardinality_almost_asc 8MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 56.17 55.73 56.19 56.20 56.96
+1459467692 high_cardinality_almost_asc 8MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 58.46 58.83 57.33 57.91 57.82
+1459467862 high_cardinality_almost_asc 8MB 'SELECT * FROM numeric_test ORDER BY a' 24.14 21.61 21.83 21.56 21.87
+1459468245 high_cardinality_almost_asc 8MB 'SELECT * FROM numeric_test_padding ORDER BY a' 76.76 71.26 71.53 70.15 71.45
+1459468388 high_cardinality_almost_asc 8MB 'SELECT * FROM numeric_test ORDER BY a DESC' 14.35 14.35 14.38 14.33 14.35
+1459468725 high_cardinality_almost_asc 8MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 62.73 67.40 62.83 65.85 64.57
+1459468889 high_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 19.31 19.63 19.36 19.65 19.39
+1459469016 high_cardinality_almost_asc 8MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 20.61 20.80 20.55 20.85 20.62
+1459469320 high_cardinality_almost_asc 8MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 56.89 56.36 56.72 56.31 56.90
+1459469499 high_cardinality_almost_asc 8MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 23.93 24.55 24.51 24.68 24.50
+1459469652 high_cardinality_almost_asc 8MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 25.59 25.73 25.62 25.72 25.75
+1459469704 high_cardinality_almost_asc 32MB 'SELECT * FROM int_test ORDER BY a' 5.16 5.14 5.14 5.14 5.14
+1459469866 high_cardinality_almost_asc 32MB 'SELECT * FROM int_test_padding ORDER BY a' 43.65 30.67 27.63 27.70 27.58
+1459469919 high_cardinality_almost_asc 32MB 'SELECT * FROM int_test ORDER BY a DESC' 5.10 5.11 5.12 5.10 5.12
+1459470059 high_cardinality_almost_asc 32MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 26.51 26.68 27.08 27.24 26.76
+1459470108 high_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.37 4.39 4.48 4.39 4.47
+1459470144 high_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 6.41 6.34 6.37 6.38 6.37
+1459470228 high_cardinality_almost_asc 32MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 15.34 15.29 15.50 15.31 15.48
+1459470294 high_cardinality_almost_asc 32MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 10.09 10.07 10.01 10.03 10.05
+1459470366 high_cardinality_almost_asc 32MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 12.44 12.38 12.41 12.36 12.34
+1459470526 high_cardinality_almost_asc 32MB 'SELECT * FROM text_test ORDER BY a' 29.56 29.50 29.51 29.58 29.52
+1459470895 high_cardinality_almost_asc 32MB 'SELECT * FROM text_test_padding ORDER BY a' 84.05 72.86 60.95 60.91 60.86
+1459471102 high_cardinality_almost_asc 32MB 'SELECT * FROM text_test ORDER BY a DESC' 29.28 29.29 29.25 29.18 29.23
+1459471386 high_cardinality_almost_asc 32MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 50.99 51.38 50.77 50.79 50.92
+1459471595 high_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM text_test' 30.80 31.76 31.78 31.78 31.82
+1459471793 high_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 33.99 33.02 33.06 33.08 33.07
+1459472189 high_cardinality_almost_asc 32MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 72.08 72.55 72.54 72.56 72.58
+1459472442 high_cardinality_almost_asc 32MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 36.18 36.00 36.40 35.40 36.05
+1459472670 high_cardinality_almost_asc 32MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 38.19 38.52 38.33 38.50 38.69
+1459472772 high_cardinality_almost_asc 32MB 'SELECT * FROM numeric_test ORDER BY a' 12.82 12.65 12.73 12.72 12.70
+1459472977 high_cardinality_almost_asc 32MB 'SELECT * FROM numeric_test_padding ORDER BY a' 40.14 37.90 38.15 37.81 38.13
+1459473078 high_cardinality_almost_asc 32MB 'SELECT * FROM numeric_test ORDER BY a DESC' 12.49 12.48 12.46 12.51 12.48
+1459473257 high_cardinality_almost_asc 32MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 32.97 33.03 33.29 33.42 33.48
+1459473355 high_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 12.97 13.00 12.99 12.99 13.11
+1459473440 high_cardinality_almost_asc 32MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 14.41 14.42 14.34 14.39 14.40
+1459473640 high_cardinality_almost_asc 32MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 37.16 37.02 37.05 37.04 37.13
+1459473767 high_cardinality_almost_asc 32MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 17.80 18.25 18.12 18.25 18.13
+1459473882 high_cardinality_almost_asc 32MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 19.23 19.38 19.25 19.46 19.28
+1459473926 high_cardinality_almost_asc 128MB 'SELECT * FROM int_test ORDER BY a' 5.12 4.98 4.96 4.93 4.97
+1459474072 high_cardinality_almost_asc 128MB 'SELECT * FROM int_test_padding ORDER BY a' 44.92 34.11 21.52 20.63 20.17
+1459474118 high_cardinality_almost_asc 128MB 'SELECT * FROM int_test ORDER BY a DESC' 4.81 4.85 4.87 4.85 4.85
+1459474227 high_cardinality_almost_asc 128MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.97 20.10 21.04 21.07 21.01
+1459474268 high_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM int_test' 4.21 4.28 4.21 4.21 4.20
+1459474304 high_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 6.23 6.20 6.20 6.20 6.21
+1459474387 high_cardinality_almost_asc 128MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 15.40 15.45 15.55 15.45 15.57
+1459474453 high_cardinality_almost_asc 128MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 9.99 9.96 10.01 10.01 10.02
+1459474524 high_cardinality_almost_asc 128MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 12.00 12.23 12.23 12.24 12.23
+1459474644 high_cardinality_almost_asc 128MB 'SELECT * FROM text_test ORDER BY a' 21.66 21.53 21.58 21.61 21.55
+1459474916 high_cardinality_almost_asc 128MB 'SELECT * FROM text_test_padding ORDER BY a' 67.24 53.00 43.50 43.36 43.37
+1459475064 high_cardinality_almost_asc 128MB 'SELECT * FROM text_test ORDER BY a DESC' 20.82 20.76 20.84 20.86 20.86
+1459475297 high_cardinality_almost_asc 128MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 42.49 42.52 42.47 42.53 42.49
+1459475455 high_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM text_test' 22.63 22.63 23.74 22.67 23.76
+1459475603 high_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 25.96 24.87 24.88 25.00 24.89
+1459475916 high_cardinality_almost_asc 128MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 57.10 57.09 58.29 57.05 58.39
+1459476114 high_cardinality_almost_asc 128MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 27.77 28.43 27.76 28.59 27.73
+1459476294 high_cardinality_almost_asc 128MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 30.54 29.78 29.93 30.52 30.66
+1459476372 high_cardinality_almost_asc 128MB 'SELECT * FROM numeric_test ORDER BY a' 9.45 9.39 9.38 10.17 9.35
+1459476521 high_cardinality_almost_asc 128MB 'SELECT * FROM numeric_test_padding ORDER BY a' 33.53 26.36 26.55 26.86 26.74
+1459476591 high_cardinality_almost_asc 128MB 'SELECT * FROM numeric_test ORDER BY a DESC' 8.57 8.60 8.57 8.58 8.59
+1459476731 high_cardinality_almost_asc 128MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 26.34 26.04 26.21 26.17 26.61
+1459476807 high_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 10.04 10.03 10.12 10.06 10.13
+1459476874 high_cardinality_almost_asc 128MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 11.24 11.27 11.24 11.22 11.28
+1459477037 high_cardinality_almost_asc 128MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 30.13 30.84 30.09 30.78 30.11
+1459477139 high_cardinality_almost_asc 128MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 14.37 14.36 14.32 14.33 14.30
+1459477231 high_cardinality_almost_asc 128MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 15.40 15.46 15.40 15.47 15.41
+1459477272 high_cardinality_almost_asc 512MB 'SELECT * FROM int_test ORDER BY a' 5.34 5.05 5.01 5.02 5.00
+1459477418 high_cardinality_almost_asc 512MB 'SELECT * FROM int_test_padding ORDER BY a' 45.19 32.34 21.33 20.93 21.72
+1459477465 high_cardinality_almost_asc 512MB 'SELECT * FROM int_test ORDER BY a DESC' 4.93 4.96 4.95 4.99 4.94
+1459477576 high_cardinality_almost_asc 512MB 'SELECT * FROM int_test_padding ORDER BY a DESC' 20.96 21.44 21.84 21.32 21.24
+1459477612 high_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.11 3.16 3.12 3.16 3.13
+1459477641 high_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.11 5.10 5.10 5.09 5.10
+1459477683 high_cardinality_almost_asc 512MB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 7.36 7.46 7.38 7.45 7.39
+1459477743 high_cardinality_almost_asc 512MB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 10.21 10.61 10.22 10.58 10.25
+1459477816 high_cardinality_almost_asc 512MB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 12.49 12.56 12.49 12.59 12.56
+1459477906 high_cardinality_almost_asc 512MB 'SELECT * FROM text_test ORDER BY a' 15.36 15.69 15.34 15.59 15.37
+1459478122 high_cardinality_almost_asc 512MB 'SELECT * FROM text_test_padding ORDER BY a' 52.73 37.61 37.41 35.97 36.57
+1459478237 high_cardinality_almost_asc 512MB 'SELECT * FROM text_test ORDER BY a DESC' 15.45 15.69 15.43 15.72 15.47
+1459478429 high_cardinality_almost_asc 512MB 'SELECT * FROM text_test_padding ORDER BY a DESC' 36.04 34.91 35.28 35.43 34.93
+1459478550 high_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM text_test' 16.49 17.64 16.49 17.64 16.50
+1459478661 high_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 18.77 18.73 18.76 18.75 18.77
+1459478889 high_cardinality_almost_asc 512MB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 42.05 41.73 41.75 41.75 41.86
+1459479050 high_cardinality_almost_asc 512MB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 23.87 23.81 24.05 23.90 23.77
+1459479204 high_cardinality_almost_asc 512MB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 25.84 26.09 25.89 26.06 25.90
+1459479267 high_cardinality_almost_asc 512MB 'SELECT * FROM numeric_test ORDER BY a' 7.54 7.52 7.51 7.47 7.51
+1459479404 high_cardinality_almost_asc 512MB 'SELECT * FROM numeric_test_padding ORDER BY a' 30.81 24.44 24.66 24.38 24.55
+1459479464 high_cardinality_almost_asc 512MB 'SELECT * FROM numeric_test ORDER BY a DESC' 7.09 7.08 7.09 7.13 7.09
+1459479592 high_cardinality_almost_asc 512MB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 24.31 24.14 24.31 24.24 24.26
+1459479648 high_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 6.34 6.34 6.35 6.37 6.33
+1459479692 high_cardinality_almost_asc 512MB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 7.54 7.51 7.52 7.51 7.52
+1459479813 high_cardinality_almost_asc 512MB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 22.58 22.52 22.61 22.51 22.56
+1459479902 high_cardinality_almost_asc 512MB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 13.44 13.34 13.38 13.40 13.41
+1459479988 high_cardinality_almost_asc 512MB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 14.52 14.47 14.57 14.51 14.50
+1459480020 high_cardinality_almost_asc 1GB 'SELECT * FROM int_test ORDER BY a' 3.54 3.52 3.54 3.53 3.53
+1459480174 high_cardinality_almost_asc 1GB 'SELECT * FROM int_test_padding ORDER BY a' 47.23 35.40 22.35 21.58 22.96
+1459480214 high_cardinality_almost_asc 1GB 'SELECT * FROM int_test ORDER BY a DESC' 3.70 3.56 3.54 3.56 3.53
+1459480329 high_cardinality_almost_asc 1GB 'SELECT * FROM int_test_padding ORDER BY a DESC' 22.37 21.92 22.44 21.85 22.57
+1459480367 high_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM int_test' 3.12 3.17 3.17 3.17 3.15
+1459480396 high_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM int_test_padding' 5.13 5.12 5.09 5.12 5.13
+1459480438 high_cardinality_almost_asc 1GB 'SELECT a FROM int_test UNION SELECT a FROM int_test_padding' 7.37 7.47 7.48 7.46 7.45
+1459480488 high_cardinality_almost_asc 1GB 'CREATE INDEX x ON int_test (a); DROP INDEX x' 8.50 8.53 8.57 8.49 8.54
+1459480550 high_cardinality_almost_asc 1GB 'CREATE INDEX x ON int_test_padding (a); DROP INDEX x' 10.55 10.58 10.56 10.48 10.58
+1459480624 high_cardinality_almost_asc 1GB 'SELECT * FROM text_test ORDER BY a' 12.92 12.75 12.69 12.64 12.67
+1459480841 high_cardinality_almost_asc 1GB 'SELECT * FROM text_test_padding ORDER BY a' 61.72 44.27 33.54 32.52 32.68
+1459480939 high_cardinality_almost_asc 1GB 'SELECT * FROM text_test ORDER BY a DESC' 12.76 12.68 12.76 12.74 12.75
+1459481116 high_cardinality_almost_asc 1GB 'SELECT * FROM text_test_padding ORDER BY a DESC' 31.45 31.45 31.51 34.64 35.31
+1459481218 high_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM text_test' 13.77 14.83 13.76 14.81 13.79
+1459481314 high_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM text_test_padding' 16.04 16.04 16.06 16.03 16.01
+1459481378 high_cardinality_almost_asc 1GB 'SELECT a FROM text_test UNION SELECT a FROM text_test_padding' 9.54 9.64 9.53 9.63 9.58
+1459481491 high_cardinality_almost_asc 1GB 'CREATE INDEX x ON text_test (a); DROP INDEX x' 20.57 20.79 20.66 20.87 20.63
+1459481626 high_cardinality_almost_asc 1GB 'CREATE INDEX x ON text_test_padding (a); DROP INDEX x' 22.74 22.88 22.79 22.79 22.80
+1459481676 high_cardinality_almost_asc 1GB 'SELECT * FROM numeric_test ORDER BY a' 5.75 5.51 5.52 5.51 5.51
+1459481808 high_cardinality_almost_asc 1GB 'SELECT * FROM numeric_test_padding ORDER BY a' 29.35 24.46 24.03 24.46 24.35
+1459481861 high_cardinality_almost_asc 1GB 'SELECT * FROM numeric_test ORDER BY a DESC' 5.50 5.51 5.50 5.50 5.49
+1459481987 high_cardinality_almost_asc 1GB 'SELECT * FROM numeric_test_padding ORDER BY a DESC' 24.01 23.87 24.38 24.49 24.46
+1459482043 high_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test' 6.45 6.35 6.43 6.33 6.46
+1459482088 high_cardinality_almost_asc 1GB 'SELECT COUNT(DISTINCT a) FROM numeric_test_padding' 7.63 7.51 7.62 7.50 7.64
+1459482145 high_cardinality_almost_asc 1GB 'SELECT a FROM numeric_test UNION SELECT a FROM numeric_test_padding' 10.03 9.94 10.04 9.90 10.02
+1459482211 high_cardinality_almost_asc 1GB 'CREATE INDEX x ON numeric_test (a); DROP INDEX x' 11.17 11.16 11.17 11.12 11.18
+1459482284 high_cardinality_almost_asc 1GB 'CREATE INDEX x ON numeric_test_padding (a); DROP INDEX x' 12.29 12.29 12.33 12.26 12.28

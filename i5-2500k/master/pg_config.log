@@ -1,0 +1,23 @@
+BINDIR = /home/postgres/pg-master/bin
+DOCDIR = /home/postgres/pg-master/share/doc
+HTMLDIR = /home/postgres/pg-master/share/doc
+INCLUDEDIR = /home/postgres/pg-master/include
+PKGINCLUDEDIR = /home/postgres/pg-master/include
+INCLUDEDIR-SERVER = /home/postgres/pg-master/include/server
+LIBDIR = /home/postgres/pg-master/lib
+PKGLIBDIR = /home/postgres/pg-master/lib
+LOCALEDIR = /home/postgres/pg-master/share/locale
+MANDIR = /home/postgres/pg-master/share/man
+SHAREDIR = /home/postgres/pg-master/share
+SYSCONFDIR = /home/postgres/pg-master/etc
+PGXS = /home/postgres/pg-master/lib/pgxs/src/makefiles/pgxs.mk
+CONFIGURE = '--prefix=/home/postgres/pg-master' '--enable-debug' 'CFLAGS=-fno-omit-frame-pointer -O2'
+CC = gcc
+CPPFLAGS = -DFRONTEND -D_GNU_SOURCE
+CFLAGS = -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Wendif-labels -Wmissing-format-attribute -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -g -fno-omit-frame-pointer -O2
+CFLAGS_SL = -fpic
+LDFLAGS = -L../../src/common -Wl,--as-needed -Wl,-rpath,'/home/postgres/pg-master/lib',--enable-new-dtags
+LDFLAGS_EX = 
+LDFLAGS_SL = 
+LIBS = -lpgcommon -lpgport -lz -lreadline -lrt -lcrypt -ldl -lm  
+VERSION = PostgreSQL 9.6devel

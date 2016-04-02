@@ -1,0 +1,13 @@
+                            List of relations
+ Schema |         Name         | Type  |  Owner   |  Size   | Description 
+--------+----------------------+-------+----------+---------+-------------
+ public | data_float           | table | postgres | 346 MB  | 
+ public | data_int             | table | postgres | 346 MB  | 
+ public | int_test             | table | postgres | 346 MB  | 
+ public | int_test_padding     | table | postgres | 3552 MB | 
+ public | numeric_test         | table | postgres | 422 MB  | 
+ public | numeric_test_padding | table | postgres | 3552 MB | 
+ public | text_test            | table | postgres | 651 MB  | 
+ public | text_test_padding    | table | postgres | 3721 MB | 
+(8 rows)
+

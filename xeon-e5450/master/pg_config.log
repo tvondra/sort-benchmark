@@ -1,0 +1,23 @@
+BINDIR = /home/postgres/pg/bin
+DOCDIR = /home/postgres/pg/share/doc
+HTMLDIR = /home/postgres/pg/share/doc
+INCLUDEDIR = /home/postgres/pg/include
+PKGINCLUDEDIR = /home/postgres/pg/include
+INCLUDEDIR-SERVER = /home/postgres/pg/include/server
+LIBDIR = /home/postgres/pg/lib
+PKGLIBDIR = /home/postgres/pg/lib
+LOCALEDIR = /home/postgres/pg/share/locale
+MANDIR = /home/postgres/pg/share/man
+SHAREDIR = /home/postgres/pg/share
+SYSCONFDIR = /home/postgres/pg/etc
+PGXS = /home/postgres/pg/lib/pgxs/src/makefiles/pgxs.mk
+CONFIGURE = '--prefix=/home/postgres/pg' '--enable-debug' 'CFLAGS=-fno-omit-frame-pointer -O2'
+CC = gcc
+CPPFLAGS = -DFRONTEND -D_GNU_SOURCE
+CFLAGS = -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Wendif-labels -Wmissing-format-attribute -Wformat-security -fno-strict-aliasing -fwrapv -g -fno-omit-frame-pointer -O2
+CFLAGS_SL = -fpic
+LDFLAGS = -L../../src/common -Wl,--as-needed -Wl,-rpath,'/home/postgres/pg/lib',--enable-new-dtags
+LDFLAGS_EX = 
+LDFLAGS_SL = 
+LIBS = -lpgcommon -lpgport -lz -lreadline -lrt -lcrypt -ldl -lm  
+VERSION = PostgreSQL 9.6devel
